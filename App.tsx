@@ -810,8 +810,8 @@ export default function App() {
             {[...adProducts, ...adProducts].map((product, index) => (
               <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
                 <AdContentItem
-                  disableAnimation={true}
-                  delay={0}
+                  disableAnimation={false}
+                  delay={index * 0.05}
                   title={product.title}
                   subTitle={product.subTitle}
                   desc={product.desc}
