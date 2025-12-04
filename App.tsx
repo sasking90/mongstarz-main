@@ -171,7 +171,7 @@ const AdContentItem: React.FC<{
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-      transition={{ delay, duration: 0.6, type: "spring" }}
+      transition={{ delay, duration: 0.3, type: "spring" }}
       className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-[0_15px_40px_-10px_rgba(148,163,184,0.1)] hover:shadow-[0_25px_60px_-12px_rgba(139,92,246,0.15)] border border-slate-100 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full select-none"
     >
       {/* Colorful Accent Glow - Reduced opacity */}
@@ -183,7 +183,7 @@ const AdContentItem: React.FC<{
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-        transition={{ delay: delay + 0.2, duration: 0.8 }}
+        transition={{ delay: delay + 0.1, duration: 0.4 }}
         className="relative h-56 lg:h-80 w-full overflow-hidden bg-slate-100 order-1 flex-shrink-0"
       >
         <img
@@ -203,7 +203,7 @@ const AdContentItem: React.FC<{
             initial={{ scale: 0.8, rotate: -10 }}
             whileInView={{ scale: 1, rotate: 0 }}
             viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-            transition={{ delay: delay + 0.3, duration: 0.6, type: "spring" }}
+            transition={{ delay: delay + 0.15, duration: 0.3, type: "spring" }}
             className={`p-2.5 lg:p-3 rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-110 border border-slate-100 bg-slate-50`}
             style={{ color: color }}
           >
@@ -280,12 +280,11 @@ export default function App() {
 
     const scroll = () => {
       if (!isPaused && scrollContainer) {
-        // If scrolled to the end of the first set (approximately half width), reset to 0
-        // We add 1px buffer to ensure smooth transition
-        if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth / 2)) {
+        scrollContainer.scrollLeft += 1.0; // 속도 2배 증가 (0.5 → 1.0)
+
+        // Reset scroll when reaching the end (infinite loop)
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
-        } else {
-          scrollContainer.scrollLeft += 0.5; // Adjust speed here (0.5 for smooth/slow, 1 for fast)
         }
       }
       animationFrameId = requestAnimationFrame(scroll);
