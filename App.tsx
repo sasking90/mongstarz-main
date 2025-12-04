@@ -801,7 +801,7 @@ export default function App() {
         </div>
 
         {/* Marquee Container with Drag Support */}
-        <div className="relative w-full overflow-hidden pb-10">
+        <div className="relative w-full overflow-hidden py-10">
           {/* Gradient Masks - Opacity reduced by ~30% (from 100% to 70% using /70 modifier) */}
           <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-r from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-l from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
