@@ -115,42 +115,53 @@ const adProducts = [
   }
 ];
 
-const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: { icon: any, title: string, sub: string, description: string, delay: number, highlight?: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-    transition={{ delay, duration: 0.6, type: "spring" }}
-    className="bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(0,0,0,0.08),0_16px_48px_-8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_16px_0_rgba(139,92,246,0.08),0_12px_32px_-4px_rgba(139,92,246,0.16),0_24px_64px_-8px_rgba(139,92,246,0.24)] transition-all duration-700 ease-out hover:-translate-y-4 hover:scale-[1.02] border border-slate-100/50 hover:border-violet-200/60 group relative overflow-hidden h-full backdrop-blur-sm bg-gradient-to-br from-white via-white to-slate-50/30"
-  >
+const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: { icon: any, title: string, sub: string, description: string, delay: number, highlight?: string }) => {
+  const [isInView, setIsInView] = useState(false);
+
+  return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-      whileInView={{ opacity: 0.03, scale: 1, rotate: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      onViewportEnter={() => setIsInView(true)}
+      onViewportLeave={() => setIsInView(false)}
       viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-      transition={{ delay: delay + 0.2, duration: 0.8 }}
-      className="absolute top-0 right-0 p-8 group-hover:opacity-[0.08] transition-all duration-700 transform group-hover:scale-110 group-hover:rotate-12 origin-top-right"
+      transition={{ delay, duration: 0.6, type: "spring" }}
+      className="bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(0,0,0,0.08),0_16px_48px_-8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_16px_0_rgba(139,92,246,0.08),0_12px_32px_-4px_rgba(139,92,246,0.16),0_24px_64px_-8px_rgba(139,92,246,0.24)] transition-all duration-700 ease-out hover:-translate-y-4 hover:scale-[1.02] border border-slate-100/50 hover:border-violet-200/60 group relative overflow-hidden h-full backdrop-blur-sm bg-gradient-to-br from-white via-white to-slate-50/30"
     >
-      <Icon size={140} className="text-violet-500" />
-    </motion.div>
-    <div className="relative z-10">
       <motion.div
-        initial={{ scale: 0.8, rotate: -10 }}
-        whileInView={{ scale: 1, rotate: 0 }}
+        initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+        whileInView={{ opacity: 0.03, scale: 1, rotate: 0 }}
         viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-        transition={{ delay: delay + 0.3, duration: 0.6, type: "spring" }}
-        className="h-16 w-16 lg:h-18 lg:w-18 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/50 rounded-[1.125rem] flex items-center justify-center mb-7 lg:mb-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_2px_8px_-2px_rgba(139,92,246,0.1)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_4px_16px_-2px_rgba(139,92,246,0.2)] transition-all duration-700 border border-violet-100/40 group-hover:border-fuchsia-200/60 group-hover:scale-110 group-hover:rotate-3"
+        transition={{ delay: delay + 0.2, duration: 0.8 }}
+        className="absolute top-0 right-0 p-8 group-hover:opacity-[0.08] transition-all duration-700 transform group-hover:scale-110 group-hover:rotate-12 origin-top-right"
       >
-        <Icon className="text-violet-600 group-hover:text-fuchsia-600 w-6 h-6 lg:w-7 lg:h-7 transition-colors duration-300" />
+        <Icon size={140} className="text-violet-500" />
       </motion.div>
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-[10px] lg:text-[11px] font-bold text-violet-600 uppercase tracking-widest bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100 group-hover:bg-violet-50 group-hover:border-violet-100 transition-colors">{sub}</span>
-        {highlight && <span className="text-[10px] font-bold text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100 flex items-center gap-1"><Sparkles size={10} />{highlight}</span>}
+      <div className="relative z-10">
+        <motion.div
+          initial={{ scale: 0.8, rotate: -10 }}
+          whileInView={{ scale: 1, rotate: 0 }}
+          viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+          transition={{ delay: delay + 0.3, duration: 0.6, type: "spring" }}
+          className="h-16 w-16 lg:h-18 lg:w-18 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/50 rounded-[1.125rem] flex items-center justify-center mb-7 lg:mb-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_2px_8px_-2px_rgba(139,92,246,0.1)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_4px_16px_-2px_rgba(139,92,246,0.2)] transition-all duration-700 border border-violet-100/40 group-hover:border-fuchsia-200/60 group-hover:scale-110 group-hover:rotate-3"
+        >
+          <Icon className="text-violet-600 group-hover:text-fuchsia-600 w-6 h-6 lg:w-7 lg:h-7 transition-colors duration-300" />
+        </motion.div>
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-[10px] lg:text-[11px] font-bold text-violet-600 uppercase tracking-widest bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100 group-hover:bg-violet-50 group-hover:border-violet-100 transition-colors">{sub}</span>
+          {highlight && <span className="text-[10px] font-bold text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100 flex items-center gap-1"><Sparkles size={10} />{highlight}</span>}
+        </div>
+        <h3
+          className={`text-2xl lg:text-[1.75rem] font-black mb-4 lg:mb-5 tracking-[-0.01em] leading-[1.3] transition-all duration-700 ${isInView ? "text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-violet-600" : "text-slate-900"}`}
+          style={{ fontFeatureSettings: '"ss01", "cv05"' }}
+        >
+          {title}
+        </h3>
+        <p className="text-slate-600 leading-[1.75] break-keep text-[15px] lg:text-base font-medium text-shadow-sm">{description}</p>
       </div>
-      <h3 className="text-2xl lg:text-[1.75rem] font-black text-slate-900 mb-4 lg:mb-5 tracking-[-0.01em] leading-[1.3] group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-violet-600 group-hover:via-fuchsia-500 group-hover:to-violet-600 transition-all duration-700" style={{ fontFeatureSettings: '"ss01", "cv05"' }}>{title}</h3>
-      <p className="text-slate-600 leading-[1.75] break-keep text-[15px] lg:text-base font-medium text-shadow-sm">{description}</p>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 // Enhanced Ad Content Component
 // Enhanced Ad Content Component
@@ -963,8 +974,8 @@ export default function App() {
 
                   <div className="relative z-10">
                     <div className="text-xs lg:text-sm font-bold text-violet-600 uppercase tracking-wider mb-2 lg:mb-3">{item.step}</div>
-                    <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-3 lg:mb-4 tracking-tight">{item.label}</h3>
-                    <p className="text-sm lg:text-base text-slate-600 leading-relaxed font-medium break-keep">{item.desc}</p>
+                    <h3 className="text-2xl lg:text-[1.75rem] font-black text-slate-900 mb-4 lg:mb-5 tracking-tight">{item.label}</h3>
+                    <p className="text-[15px] lg:text-base text-slate-600 leading-relaxed font-medium break-keep">{item.desc}</p>
                   </div>
 
                   <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-slate-50 to-transparent rounded-tl-[3rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
