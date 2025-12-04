@@ -375,7 +375,7 @@ export default function App() {
                 Ad-Tech Platform.
               </h1>
 
-              <p className="text-lg lg:text-2xl text-slate-200 mb-12 lg:mb-16 max-w-2xl leading-relaxed font-medium pl-6 lg:pl-8 border-l-4 border-teal-400/60 drop-shadow-lg">
+              <p className="text-base lg:text-xl text-slate-200 mb-12 lg:mb-16 max-w-2xl leading-relaxed font-medium pl-6 lg:pl-8 border-l-4 border-teal-400/60 drop-shadow-lg">
                 <strong>MONGSTARZ</strong>는 게이미피케이션(Gamification)과 지역 기반(Local) 혜택을 결합하여,
                 소비자에게는 <span className="text-white font-bold text-shadow-sm">확실한 보상</span>을,
                 파트너에게는 <span className="text-white font-bold text-shadow-sm">실구매 전환</span>을 제공하는 혁신적인 광고 플랫폼입니다.
@@ -408,17 +408,17 @@ export default function App() {
               </div>
 
               <div className="mt-14 lg:mt-20 grid grid-cols-3 gap-4 lg:gap-8 border-t border-white/10 pt-8 lg:pt-10 text-white">
-                <div className="group cursor-default">
-                  <div className="text-2xl lg:text-5xl font-black mb-1 lg:mb-2 text-white group-hover:text-teal-300 transition-colors drop-shadow-md">99<span className="text-lg lg:text-2xl text-teal-400 align-top">%</span></div>
-                  <div className="text-[10px] lg:text-sm text-slate-300 font-bold uppercase tracking-wide">Ad Engagement<br />(광고 몰입도)</div>
+                <div className="group cursor-default text-center">
+                  <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-teal-300 transition-colors drop-shadow-md">99<span className="text-2xl lg:text-3xl text-teal-400 align-top">%</span></div>
+                  <div className="text-xs lg:text-base text-slate-300 font-bold uppercase tracking-wide">AD ENGAGEMENT<br />(광고 몰입도)</div>
                 </div>
-                <div className="group cursor-default">
-                  <div className="text-2xl lg:text-5xl font-black mb-1 lg:mb-2 text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">3.5<span className="text-lg lg:text-2xl text-cyan-400 align-top">X</span></div>
-                  <div className="text-[10px] lg:text-sm text-slate-300 font-bold uppercase tracking-wide">Higher ROAS<br />(광고 효율)</div>
+                <div className="group cursor-default text-center">
+                  <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">3.5<span className="text-2xl lg:text-3xl text-cyan-400 align-top">X</span></div>
+                  <div className="text-xs lg:text-base text-slate-300 font-bold uppercase tracking-wide">HIGHER ROAS<br />(광고 효율)</div>
                 </div>
-                <div className="group cursor-default">
-                  <div className="text-2xl lg:text-5xl font-black mb-1 lg:mb-2 text-white group-hover:text-violet-300 transition-colors drop-shadow-md">Pat.<span className="text-lg lg:text-2xl text-violet-400 align-top">✔</span></div>
-                  <div className="text-[10px] lg:text-sm text-slate-300 font-bold uppercase tracking-wide">BM Patent<br />(특허 등록)</div>
+                <div className="group cursor-default text-center">
+                  <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-violet-300 transition-colors drop-shadow-md">Pat.<span className="text-2xl lg:text-3xl text-violet-400 align-top">✔</span></div>
+                  <div className="text-xs lg:text-base text-slate-300 font-bold uppercase tracking-wide">BM PATENT<br />(특허 등록)</div>
                 </div>
               </div>
             </motion.div>
