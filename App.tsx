@@ -123,13 +123,25 @@ const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: 
     transition={{ delay, duration: 0.6, type: "spring" }}
     className="bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(0,0,0,0.08),0_16px_48px_-8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_16px_0_rgba(139,92,246,0.08),0_12px_32px_-4px_rgba(139,92,246,0.16),0_24px_64px_-8px_rgba(139,92,246,0.24)] transition-all duration-700 ease-out hover:-translate-y-4 hover:scale-[1.02] border border-slate-100/50 hover:border-violet-200/60 group relative overflow-hidden h-full backdrop-blur-sm bg-gradient-to-br from-white via-white to-slate-50/30"
   >
-    <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-700 transform group-hover:scale-110 group-hover:rotate-12 origin-top-right">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+      whileInView={{ opacity: 0.03, scale: 1, rotate: 0 }}
+      viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+      transition={{ delay: delay + 0.2, duration: 0.8 }}
+      className="absolute top-0 right-0 p-8 group-hover:opacity-[0.08] transition-all duration-700 transform group-hover:scale-110 group-hover:rotate-12 origin-top-right"
+    >
       <Icon size={140} className="text-violet-500" />
-    </div>
+    </motion.div>
     <div className="relative z-10">
-      <div className="h-16 w-16 lg:h-18 lg:w-18 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/50 rounded-[1.125rem] flex items-center justify-center mb-7 lg:mb-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_2px_8px_-2px_rgba(139,92,246,0.1)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_4px_16px_-2px_rgba(139,92,246,0.2)] transition-all duration-700 border border-violet-100/40 group-hover:border-fuchsia-200/60 group-hover:scale-110 group-hover:rotate-3">
+      <motion.div
+        initial={{ scale: 0.8, rotate: -10 }}
+        whileInView={{ scale: 1, rotate: 0 }}
+        viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+        transition={{ delay: delay + 0.3, duration: 0.6, type: "spring" }}
+        className="h-16 w-16 lg:h-18 lg:w-18 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/50 rounded-[1.125rem] flex items-center justify-center mb-7 lg:mb-9 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_2px_8px_-2px_rgba(139,92,246,0.1)] group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_4px_16px_-2px_rgba(139,92,246,0.2)] transition-all duration-700 border border-violet-100/40 group-hover:border-fuchsia-200/60 group-hover:scale-110 group-hover:rotate-3"
+      >
         <Icon className="text-violet-600 group-hover:text-fuchsia-600 w-6 h-6 lg:w-7 lg:h-7 transition-colors duration-300" />
-      </div>
+      </motion.div>
       <div className="flex items-center gap-2 mb-4">
         <span className="text-[10px] lg:text-[11px] font-bold text-violet-600 uppercase tracking-widest bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100 group-hover:bg-violet-50 group-hover:border-violet-100 transition-colors">{sub}</span>
         {highlight && <span className="text-[10px] font-bold text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100 flex items-center gap-1"><Sparkles size={10} />{highlight}</span>}
