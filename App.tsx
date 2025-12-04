@@ -657,7 +657,13 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>만</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <div className="h-full bg-violet-500 w-[80%] rounded-full"></div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "80%" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="h-full bg-violet-500 rounded-full"
+                ></motion.div>
               </div>
               <p className="text-sm text-slate-600 font-bold">국내 리워드 앱 실사용자 수 (2024)</p>
             </div>
@@ -669,7 +675,13 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <div className="h-full bg-fuchsia-500 w-[60%] rounded-full"></div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "60%" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="h-full bg-fuchsia-500 rounded-full"
+                ></motion.div>
               </div>
               <p className="text-sm text-slate-600 font-bold">연평균 시장 성장률 (2021-2025)</p>
             </div>
@@ -681,7 +693,13 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>조</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <div className="h-full bg-amber-500 w-[90%] rounded-full"></div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "90%" }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="h-full bg-amber-500 rounded-full"
+                ></motion.div>
               </div>
               <p className="text-sm text-slate-600 font-bold">2025년 예상 전체 시장 규모</p>
             </div>
@@ -773,7 +791,7 @@ export default function App() {
                       <Bar
                         dataKey="size"
                         radius={[12, 12, 12, 12]}
-                        animationDuration={1500}
+                        animationDuration={800}
                         animationEasing="ease-out"
                       >
                         {marketData.map((entry, index) => (
