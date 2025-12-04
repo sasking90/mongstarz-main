@@ -954,7 +954,7 @@ export default function App() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="bg-white rounded-[2rem] p-8 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group overflow-hidden"
                 >
