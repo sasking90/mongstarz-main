@@ -641,7 +641,7 @@ export default function App() {
 
               <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart key={graphKey} data={marketData} margin={{ top: 40, right: 10, left: -20, bottom: 20 }} barSize={50}>
+                  <BarChart key={graphKey} data={marketData} margin={{ top: 40, right: 10, left: 0, bottom: 20 }} barSize={50}>
                     <defs>
                       <filter id="barShadow" height="130%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
