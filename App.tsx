@@ -546,7 +546,7 @@ export default function App() {
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="absolute top-28 lg:top-40 -right-4 lg:-right-8 bg-white/80 backdrop-blur-xl p-3 lg:p-5 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-2.5 lg:gap-4 z-30 border border-white/80 ring-1 ring-white/50 scale-75 lg:scale-100"
+                className="absolute top-28 lg:top-40 right-0 lg:-right-8 bg-white/80 backdrop-blur-xl p-3 lg:p-5 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-2.5 lg:gap-4 z-30 border border-white/80 ring-1 ring-white/50 scale-75 lg:scale-100"
               >
                 <div className="bg-emerald-50 p-2.5 lg:p-3 rounded-2xl shadow-inner border border-emerald-100"><TrendingUp className="text-emerald-600 w-5 h-5 lg:w-6 lg:h-6" /></div>
                 <div>
@@ -558,7 +558,7 @@ export default function App() {
               <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-28 lg:bottom-40 -left-6 lg:-left-12 bg-white/80 backdrop-blur-xl p-3 lg:p-5 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-2.5 lg:gap-4 z-30 border border-white/80 ring-1 ring-white/50 scale-75 lg:scale-100"
+                className="absolute bottom-28 lg:bottom-40 left-0 lg:-left-12 bg-white/80 backdrop-blur-xl p-3 lg:p-5 rounded-[2rem] shadow-[0_20px_40px_rgba(0,0,0,0.05)] flex items-center gap-2.5 lg:gap-4 z-30 border border-white/80 ring-1 ring-white/50 scale-75 lg:scale-100"
               >
                 <div className="bg-amber-50 p-2.5 lg:p-3 rounded-2xl shadow-inner border border-amber-100"><Star className="text-amber-500 w-5 h-5 lg:w-6 lg:h-6 fill-amber-500" /></div>
                 <div>
