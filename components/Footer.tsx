@@ -26,42 +26,42 @@ export const Footer: React.FC = () => {
                     <div className="flex flex-wrap gap-3 lg:gap-5 justify-center mb-8">
                         <button
                             onClick={() => openModal('advertiserTerms')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             광고주 이용약관
                         </button>
                         <span className="text-slate-600">|</span>
                         <button
                             onClick={() => openModal('userTerms')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             회원 이용약관
                         </button>
                         <span className="text-slate-600">|</span>
                         <button
                             onClick={() => openModal('locationTerms')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             위치정보 이용
                         </button>
                         <span className="text-slate-600">|</span>
                         <button
                             onClick={() => openModal('privacyPolicy')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             개인정보처리방침
                         </button>
                         <span className="text-slate-600">|</span>
                         <button
                             onClick={() => openModal('privacyCollection')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             개인정보 수집 및 이용
                         </button>
                         <span className="text-slate-600">|</span>
                         <button
                             onClick={() => openModal('thirdPartyOffer')}
-                            className="text-sm lg:text-base hover:text-white transition-colors font-medium"
+                            className="text-[10px] lg:text-base hover:text-white transition-colors font-medium"
                         >
                             개인정보 제3자 제공
                         </button>

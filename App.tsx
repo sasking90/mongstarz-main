@@ -36,7 +36,7 @@ const adProducts = [
     desc: "참가권을 사용하여 광고에 진입 후, 미니게임을 즐기며 '타임(Time)' 자원을 대량으로 획득하는 컨텐츠입니다. 짧은 시간 내 집중적인 사용자 참여를 유도하여 폭발적인 트래픽과 높은 클릭률(CTR)을 보장합니다.",
     tags: ['Mass Traffic', 'Earning', 'High CTR'],
     effect: "1시간 내 평균 참여자 5만 명, 클릭률 15% 이상 달성",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80", // Clock and Money (Alarm clock on coins)
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80", // Keep original for now or replace if I generated one? I didn't generate one for Time Pick.
     icon: Target,
     color: "#f59e0b", // Amber
     accentColor: "#fef3c7"
@@ -48,7 +48,7 @@ const adProducts = [
     desc: "획득한 '타임'을 소모하여 제한 시간 내에 고가 경품 획득에 도전하는 긴박감 넘치는 게임입니다. 지속적인 재도전을 자극하여 사용자의 앱 체류 시간을 극대화하고 반복적인 광고 노출 효과를 창출합니다.",
     tags: ['Retention', 'Play', 'Viral'],
     effect: "평균 체류 시간 15분 이상, 재접속률 40% 증가",
-    image: "https://images.unsplash.com/photo-1561414927-6d86591d0c4f?auto=format&fit=crop&w=800&q=80", // Money & Time
+    image: "https://images.unsplash.com/photo-1561414927-6d86591d0c4f?auto=format&fit=crop&w=800&q=80", // Keep original
     icon: Timer,
     color: "#ef4444", // Red
     accentColor: "#fee2e2"
@@ -60,7 +60,7 @@ const adProducts = [
     desc: "사용자가 브랜드 관련 퀴즈를 풀고 보상을 받는 학습형 광고입니다. 단순 노출을 넘어 브랜드의 핵심 메시지를 자연스럽게 각인시키며, 높은 정답률을 통해 확실한 인지도 상승 효과를 제공합니다.",
     tags: ['Education', 'Awareness', 'Fun'],
     effect: "브랜드 키워드 검색량 300% 증가, 정답률 90% 이상",
-    image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80", // Quiz Concept
+    image: "/assets/solving.png",
     icon: HelpCircle,
     color: "#8b5cf6", // Violet
     accentColor: "#ede9fe"
@@ -72,7 +72,7 @@ const adProducts = [
     desc: "참가권을 사용해 알파벳 카드를 뒤집고, 짝을 맞추면 즉시 경품을 획득하는 직관적인 매칭 게임입니다. '즉각적인 보상' 심리를 자극하여 가벼운 마음으로 광고에 접속하게 만들고 높은 참여율을 이끌어냅니다.",
     tags: ['Instant Win', 'Matching', 'O2O'],
     effect: "매장 방문 전환율 12%, 쿠폰 사용률 25% 기록",
-    image: "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=800&q=80", // Slot Machine (Fixed)
+    image: "/assets/alpha_matching.png",
     icon: MapPin,
     color: "#10b981", // Emerald
     accentColor: "#d1fae5"
@@ -84,7 +84,7 @@ const adProducts = [
     desc: "참가권으로 응모번호를 발급받고, 공식 SNS 라이브 방송에서 당첨을 확인하는 팬덤형 이벤트입니다. 참여 조건으로 '구독'과 '좋아요'를 유도하여 브랜드 채널의 팬덤을 확장하고, 자발적인 바이럴 마케팅 효과를 극대화합니다.",
     tags: ['SNS Growth', 'Live Event', 'Fandom'],
     effect: "SNS 구독자 300% 증가, 게시물 도달률 5배 상승",
-    image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=800&q=80", // Gifts
+    image: "/assets/double_event.png",
     icon: Gift,
     color: "#db2777", // Pink-600
     accentColor: "#fce7f3"
@@ -96,7 +96,7 @@ const adProducts = [
     desc: "참가권을 소모하여 명품 가방, 시계 등 하이엔드 경품 획득에 도전하는 프리미엄 전용관(명품관)입니다. 참여 과정에서 고단가 외부 광고(CPC/CPA)를 자연스럽게 노출하여, 사용자에게는 '대박의 기회'를, 플랫폼에는 '고수익 모델'을 동시에 제공합니다.",
     tags: ['High Value', 'Ad Revenue', 'Premium'],
     effect: "외부 광고 수익(CPC) 200% 증대, 고관여 유저 확보",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80", // Luxury
+    image: "/assets/luxury_gallery.png",
     icon: Gem,
     color: "#0f172a", // Slate-900 (Black/Gold theme)
     accentColor: "#e2e8f0"
@@ -108,7 +108,7 @@ const adProducts = [
     desc: "참가권을 사용하여 식음료, 뷰티, 클래스 등 오프라인 매장의 실물 체험권을 획득하는 O2O 특화 체험관입니다. 온라인 사용자의 발길을 실제 오프라인 매장으로 이끄는 'Drive-to-Store' 효과를 통해 광고주에게 확실한 신규 고객 유입을 보장합니다.",
     tags: ['Drive to Store', 'Voucher', 'Local Ad'],
     effect: "오프라인 매장 방문율 40% 증가, 신규 고객 유입 확대",
-    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80", // VR Experience
+    image: "/assets/experience_center.png",
     icon: Store,
     color: "#f97316", // Orange-500
     accentColor: "#ffedd5"
@@ -641,7 +641,7 @@ export default function App() {
 
               <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart key={graphKey} data={marketData} margin={{ top: 40, right: 10, left: 0, bottom: 20 }} barSize={50}>
+                  <BarChart key={graphKey} data={marketData} margin={{ top: 60, right: 10, left: 0, bottom: 20 }} barSize={50}>
                     <defs>
                       <filter id="barShadow" height="130%">
                         <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
@@ -725,10 +725,10 @@ export default function App() {
                           const { x, y, width, value } = props;
                           return (
                             <g>
-                              <rect x={x + width / 2 - 24} y={y - 32} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
+                              <rect x={x + width / 2 - 24} y={y - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
                               <text
                                 x={x + width / 2}
-                                y={y - 18}
+                                y={y - 36}
                                 fill="#059669"
                                 fontSize="11px"
                                 fontWeight="800"
