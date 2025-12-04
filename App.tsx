@@ -22,7 +22,7 @@ const marketData = [
 
 const revenueData = [
   { step: 'Step 1', label: 'User Action', desc: '광고 참여 & 미션 수행', icon: MousePointerClick, color: 'text-blue-500', bg: 'bg-blue-50' },
-  { step: 'Step 2', label: 'Ticket Issue', desc: '응모권(Ticket) 획득', icon: Ticket, color: 'text-violet-500', bg: 'bg-violet-50' },
+  { step: 'Step 2', label: 'Special Issue', desc: '참가권 사용 후 아이템 획득', icon: Ticket, color: 'text-violet-500', bg: 'bg-violet-50' },
   { step: 'Step 3', label: 'Prize Draw', desc: '실물 경품 응모', icon: Gift, color: 'text-fuchsia-500', bg: 'bg-fuchsia-50' },
   { step: 'Step 4', label: 'Ad Revenue', desc: '광고주 집행비 수익화', icon: Coins, color: 'text-amber-500', bg: 'bg-amber-50' },
 ];
@@ -920,16 +920,13 @@ export default function App() {
                     <Icon className={`w-6 h-6 lg:w-7 lg:h-7 ${item.color}`} />
                   </div>
 
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">{item.step}</div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.label}</h3>
-                  <p className="text-slate-600 font-medium leading-relaxed text-sm break-keep">{item.desc}</p>
+                  <div className="relative z-10">
+                    <div className="text-xs lg:text-sm font-bold text-violet-600 uppercase tracking-wider mb-2 lg:mb-3">{item.step}</div>
+                    <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-3 lg:mb-4 tracking-tight">{item.label}</h3>
+                    <p className="text-sm lg:text-base text-slate-600 leading-relaxed font-medium break-keep">{item.desc}</p>
+                  </div>
 
-                  {/* Connector Arrow for Desktop */}
-                  {index < 3 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-5 z-20 text-slate-300">
-                      <ArrowRight size={20} />
-                    </div>
-                  )}
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-slate-50 to-transparent rounded-tl-[3rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </motion.div>
               );
             })}
