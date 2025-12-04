@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+﻿import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { motion } from 'framer-motion';
@@ -36,7 +36,7 @@ const adProducts = [
     desc: "참가권을 사용하여 광고에 진입 후, 미니게임을 즐기며 '타임(Time)' 자원을 대량으로 획득하는 컨텐츠입니다. 짧은 시간 내 집중적인 사용자 참여를 유도하여 폭발적인 트래픽과 높은 클릭률(CTR)을 보장합니다.",
     tags: ['Mass Traffic', 'Earning', 'High CTR'],
     effect: "1시간 내 평균 참여자 5만 명, 클릭률 15% 이상 달성",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80", // Keep original for now or replace if I generated one? I didn't generate one for Time Pick.
+    image: "/assets/time_pick.png",
     icon: Target,
     color: "#f59e0b", // Amber
     accentColor: "#fef3c7"
@@ -657,13 +657,7 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>만</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "80%" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-violet-500 rounded-full"
-                ></motion.div>
+                <div className="h-full bg-violet-500 w-[80%] rounded-full"></div>
               </div>
               <p className="text-sm text-slate-600 font-bold">국내 리워드 앱 실사용자 수 (2024)</p>
             </div>
@@ -675,13 +669,7 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "60%" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-fuchsia-500 rounded-full"
-                ></motion.div>
+                <div className="h-full bg-fuchsia-500 w-[60%] rounded-full"></div>
               </div>
               <p className="text-sm text-slate-600 font-bold">연평균 시장 성장률 (2021-2025)</p>
             </div>
@@ -693,13 +681,7 @@ export default function App() {
               </div>
               <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>조</span></div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "90%" }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="h-full bg-amber-500 rounded-full"
-                ></motion.div>
+                <div className="h-full bg-amber-500 w-[90%] rounded-full"></div>
               </div>
               <p className="text-sm text-slate-600 font-bold">2025년 예상 전체 시장 규모</p>
             </div>
@@ -721,175 +703,207 @@ export default function App() {
               <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-center">Market Size Forecast</h3>
               <p className="text-slate-500 text-center mb-10 font-medium text-sm lg:text-base">지속적인 성장이 예측되는 리워드 광고 시장</p>
 
-              <div className="h-[320px] lg:h-[450px] w-full flex justify-center overflow-hidden">
-                <motion.div
-                  initial={{ width: 0, opacity: 0 }}
-                  whileInView={{ width: "100%", opacity: 1 }}
-                  viewport={{ once: false, margin: "-50px" }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  className="w-full h-full"
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart key={graphKey} data={marketData} margin={{ top: 60, right: 10, left: 0, bottom: 20 }} barSize={50}>
-                      <defs>
-                        <filter id="barShadow" height="130%">
-                          <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
-                          <feOffset dx="0" dy="4" result="offsetblur" />
-                          <feFlood floodColor="rgba(139, 92, 246, 0.3)" />
-                          <feComposite in2="offsetblur" operator="in" />
-                          <feMerge>
-                            <feMergeNode />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                        <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#818cf8" stopOpacity={1} />
-                          <stop offset="100%" stopColor="#6366f1" stopOpacity={1} />
-                        </linearGradient>
-                        <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#a78bfa" stopOpacity={1} />
-                          <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
-                        </linearGradient>
-                        <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#c084fc" stopOpacity={1} />
-                          <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
-                        </linearGradient>
-                        <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#e879f9" stopOpacity={1} />
-                          <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                      <XAxis
-                        dataKey="year"
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#64748b', fontSize: 13, fontWeight: 700 }}
-                        dy={15}
-                      />
-                      <YAxis
-                        axisLine={false}
-                        tickLine={false}
-                        tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
-                        tickFormatter={(value) => `${value}조`}
-                        width={40}
-                      />
-                      <Tooltip
-                        cursor={{ fill: '#f8fafc', opacity: 0.5 }}
-                        contentStyle={{
-                          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                          backdropFilter: 'blur(8px)',
-                          borderRadius: '16px',
-                          border: '1px solid rgba(255,255,255,0.5)',
-                          boxShadow: '0 10px 30px -5px rgba(0,0,0,0.1)',
-                          padding: '12px 16px'
+              <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart key={graphKey} data={marketData} margin={{ top: 60, right: 10, left: 0, bottom: 20 }} barSize={50}>
+                    <defs>
+                      <filter id="barShadow" height="130%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                        <feOffset dx="0" dy="4" result="offsetblur" />
+                        <feFlood floodColor="rgba(139, 92, 246, 0.3)" />
+                        <feComposite in2="offsetblur" operator="in" />
+                        <feMerge>
+                          <feMergeNode />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                      <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#818cf8" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#6366f1" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#a78bfa" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#c084fc" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#e879f9" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                    <XAxis
+                      dataKey="year"
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#64748b', fontSize: 13, fontWeight: 700 }}
+                      dy={15}
+                    />
+                    <YAxis
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
+                      tickFormatter={(value) => `${value}조`}
+                      width={40}
+                    />
+                    <Tooltip
+                      cursor={{ fill: '#f8fafc', opacity: 0.5 }}
+                      contentStyle={{
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        backdropFilter: 'blur(8px)',
+                        borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.5)',
+                        boxShadow: '0 10px 30px -5px rgba(0,0,0,0.1)',
+                        padding: '12px 16px'
+                      }}
+                      itemStyle={{ color: '#1e293b', fontWeight: '700', fontSize: '14px' }}
+                      labelStyle={{ color: '#64748b', fontWeight: '600', marginBottom: '4px', fontSize: '12px' }}
+                      formatter={(value: any) => [`${value}조 원`, '시장 규모']}
+                    />
+                    <Bar
+                      dataKey="size"
+                      radius={[12, 12, 12, 12]}
+                      animationDuration={1500}
+                      animationEasing="ease-out"
+                    >
+                      {marketData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={`url(#barGradient${entry.year})`} filter="url(#barShadow)" />
+                      ))}
+                      <LabelList
+                        dataKey="label"
+                        position="top"
+                        style={{
+                          fill: '#334155',
+                          fontWeight: 800,
+                          fontSize: '14px',
+                          textAnchor: 'middle',
                         }}
-                        itemStyle={{ color: '#1e293b', fontWeight: '700', fontSize: '14px' }}
-                        labelStyle={{ color: '#64748b', fontWeight: '600', marginBottom: '4px', fontSize: '12px' }}
-                        formatter={(value: any) => [`${value}조 원`, '시장 규모']}
+                        offset={10}
                       />
-                      );
-                          }}
-                        />
+                      <LabelList
+                        dataKey="growth"
+                        position="top"
+                        content={(props: any) => {
+                          const { x, y, width, value } = props;
+                          return (
+                            <g>
+                              <rect x={x + width / 2 - 24} y={y - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
+                              <text
+                                x={x + width / 2}
+                                y={y - 40}
+                                fill="#059669"
+                                fontSize="11px"
+                                fontWeight="800"
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                              >
+                                ▲ {value}%
+                              </text>
+                            </g>
+                          );
+                        }}
+                      />
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>
-              </motion.div>
+              </div>
             </div>
+          </motion.div>
         </div>
-      </motion.div>
-    </div>
       </section >
 
-    {/* Advertising Contents - Draggable Marquee Layout */ }
-    < section className = "py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id = "contents" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 lg:mb-24">
-          <span className="text-fuchsia-600 font-bold tracking-widest text-xs uppercase bg-fuchsia-50 px-4 py-1.5 rounded-full border border-fuchsia-100">Advertising Contents</span>
-          <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
-            몰입도 높은<br className="lg:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">광고 상품 라인업</span>
-          </h2>
+      {/* Advertising Contents - Draggable Marquee Layout */}
+      < section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="contents" >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-fuchsia-600 font-bold tracking-widest text-xs uppercase bg-fuchsia-50 px-4 py-1.5 rounded-full border border-fuchsia-100">Advertising Contents</span>
+            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
+              몰입도 높은<br className="lg:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">광고 상품 라인업</span>
+            </h2>
+          </div>
         </div>
-      </div>
 
-  {/* Marquee Container with Drag Support */ }
-  <div className="relative w-full overflow-hidden py-10">
-    {/* Gradient Masks - Opacity reduced by ~30% (from 100% to 70% using /70 modifier) */}
-    <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-r from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
-    <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-l from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
+        {/* Marquee Container with Drag Support */}
+        <div className="relative w-full overflow-hidden py-10">
+          {/* Gradient Masks - Opacity reduced by ~30% (from 100% to 70% using /70 modifier) */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-r from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-l from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
 
-    {/* Scrolling Track - Using JS ref for scroll control to allow dragging */}
-    <div
-      ref={scrollRef}
-      className="flex w-full overflow-x-auto no-scrollbar gap-6 lg:gap-10 px-4 lg:px-10"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
-      style={{ scrollBehavior: 'auto' }} // Disable smooth scroll for JS animation to work properly
-    >
-      {/* Duplicate items for infinite loop (3 sets for bidirectional infinite scroll) */}
-      {[...adProducts, ...adProducts, ...adProducts].map((product, index) => (
-        <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
-          <AdContentItem
-            disableAnimation={true}
-            delay={0}
-            title={product.title}
-            subTitle={product.subTitle}
-            desc={product.desc}
-            tags={product.tags}
-            effect={product.effect}
-            image={product.image}
-            icon={product.icon}
-            color={product.color}
-            accentColor={product.accentColor}
-          />
+          {/* Scrolling Track - Using JS ref for scroll control to allow dragging */}
+          <div
+            ref={scrollRef}
+            className="flex w-full overflow-x-auto no-scrollbar gap-6 lg:gap-10 px-4 lg:px-10"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+            style={{ scrollBehavior: 'auto' }} // Disable smooth scroll for JS animation to work properly
+          >
+            {/* Duplicate items for infinite loop (3 sets for bidirectional infinite scroll) */}
+            {[...adProducts, ...adProducts, ...adProducts].map((product, index) => (
+              <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
+                <AdContentItem
+                  disableAnimation={true}
+                  delay={0}
+                  title={product.title}
+                  subTitle={product.subTitle}
+                  desc={product.desc}
+                  tags={product.tags}
+                  effect={product.effect}
+                  image={product.image}
+                  icon={product.icon}
+                  color={product.color}
+                  accentColor={product.accentColor}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
       </section >
 
-    {/* Core Features */ }
-    < section className = "py-20 lg:py-32 bg-white" id = "features" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 lg:mb-24">
-          <span className="text-cyan-600 font-bold tracking-widest text-xs uppercase bg-cyan-50 px-4 py-1.5 rounded-full border border-cyan-100">Why MONGSTARZ?</span>
-          <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
-            플랫폼 경쟁력
-          </h2>
+      {/* Core Features */}
+      < section className="py-20 lg:py-32 bg-white" id="features" >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-cyan-600 font-bold tracking-widest text-xs uppercase bg-cyan-50 px-4 py-1.5 rounded-full border border-cyan-100">Why MONGSTARZ?</span>
+            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
+              플랫폼 경쟁력
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            <FeatureCard
+              delay={0.1}
+              icon={Target}
+              title="Hyper-Local 타겟팅"
+              sub="Precision"
+              highlight="Hit!"
+              description="반경 500m 이내 사용자를 정밀 타겟팅하여 낭비 없는 광고 집행이 가능합니다. 지역 소상공인부터 대기업 프랜차이즈까지 최적화된 효율을 제공합니다."
+            />
+            <FeatureCard
+              delay={0.2}
+              icon={Gamepad2}
+              title="몰입형 게이미피케이션"
+              sub="Fun Factor"
+              highlight="Play"
+              description="단순 노출을 넘어, 게임/퀴즈/미션을 통해 사용자가 자발적으로 광고에 참여하게 만듭니다. 광고를 콘텐츠로 소비하는 새로운 경험을 선사합니다."
+            />
+            <FeatureCard
+              delay={0.3}
+              icon={TrendingUp}
+              title="데이터 기반 성과 분석"
+              sub="Analytics"
+              highlight="Grow"
+              description="클릭, 체류, 구매 전환 등 사용자 행동 데이터를 실시간으로 분석하여 광고주에게 투명한 리포트와 인사이트를 제공합니다."
+            />
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-          <FeatureCard
-            delay={0.1}
-            icon={Target}
-            title="Hyper-Local 타겟팅"
-            sub="Precision"
-            highlight="Hit!"
-            description="반경 500m 이내 사용자를 정밀 타겟팅하여 낭비 없는 광고 집행이 가능합니다. 지역 소상공인부터 대기업 프랜차이즈까지 최적화된 효율을 제공합니다."
-          />
-          <FeatureCard
-            delay={0.2}
-            icon={Gamepad2}
-            title="몰입형 게이미피케이션"
-            sub="Fun Factor"
-            highlight="Play"
-            description="단순 노출을 넘어, 게임/퀴즈/미션을 통해 사용자가 자발적으로 광고에 참여하게 만듭니다. 광고를 콘텐츠로 소비하는 새로운 경험을 선사합니다."
-          />
-          <FeatureCard
-            delay={0.3}
-            icon={TrendingUp}
-            title="데이터 기반 성과 분석"
-            sub="Analytics"
-            highlight="Grow"
-            description="클릭, 체류, 구매 전환 등 사용자 행동 데이터를 실시간으로 분석하여 광고주에게 투명한 리포트와 인사이트를 제공합니다."
-          />
-        </div>
-      </div>
       </section >
 
-    {/* Business Model & Revenue (Redesigned Layout) */ }
-    < section className = "py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id = "revenue" >
+      {/* Business Model & Revenue (Redesigned Layout) */}
+      < section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="revenue" >
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-violet-200/30 rounded-full blur-[100px]"></div>
           <div className="absolute top-40 -left-20 w-[400px] h-[400px] bg-cyan-200/30 rounded-full blur-[100px]"></div>
@@ -911,15 +925,15 @@ export default function App() {
           {/* Ticket Economy Visual Summary */}
           <div className="mb-16">
             <div className="bg-white rounded-[3rem] p-8 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-10 opacity-5">
+              <div className="absolute top-0 right-0 p-10 opacity-5 hidden">
                 <Ticket size={200} />
               </div>
 
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-16">
                 {/* Visible on Mobile now */}
                 <div className="flex-1 text-center md:text-right">
-                  <h4 className="text-xl font-bold text-slate-900">User Traffic</h4>
-                  <p className="text-slate-500 font-medium">Voluntary Participation</p>
+                  <h4 className="text-2xl lg:text-[1.75rem] font-black text-slate-900 mb-4 lg:mb-5 tracking-tight">User Traffic</h4>
+                  <p className="text-[15px] lg:text-base text-slate-600 leading-relaxed font-medium break-keep">Voluntary Participation</p>
                 </div>
 
                 <div className="relative my-4 md:my-0">
@@ -938,8 +952,8 @@ export default function App() {
 
                 {/* Visible on Mobile now */}
                 <div className="flex-1 text-center md:text-left">
-                  <h4 className="text-xl font-bold text-slate-900">Ad Revenue</h4>
-                  <p className="text-slate-500 font-medium">Sustainable Growth</p>
+                  <h4 className="text-2xl lg:text-[1.75rem] font-black text-slate-900 mb-4 lg:mb-5 tracking-tight">Ad Revenue</h4>
+                  <p className="text-[15px] lg:text-base text-slate-600 leading-relaxed font-medium break-keep">Sustainable Growth</p>
                 </div>
               </div>
             </div>
@@ -954,18 +968,16 @@ export default function App() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="bg-white rounded-[2rem] p-8 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.03)] border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group overflow-hidden"
                 >
                   <div className={`absolute top-0 right-0 w-24 h-24 ${item.bg} rounded-bl-[4rem] opacity-50 transition-transform group-hover:scale-110 origin-top-right`}></div>
 
                   <motion.div
-                    initial={{ scale: 0.8, rotate: -10 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-                    transition={{ delay: index * 0.1 + 0.2, duration: 0.6, type: "spring" }}
-                    className={`w-12 h-12 lg:w-14 lg:h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-6 relative z-10 shadow-sm group-hover:scale-110 transition-transform duration-300`}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: index * 0.2 }}
+                    className={`w-12 h-12 lg:w-14 lg:h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-6 relative z-10 shadow-sm`}
                   >
                     <Icon className={`w-6 h-6 lg:w-7 lg:h-7 ${item.color}`} />
                   </motion.div>
@@ -984,52 +996,52 @@ export default function App() {
         </div>
       </section >
 
-    {/* Footer / Contact */ }
-    < section className = "py-20 bg-slate-50 border-t border-slate-200" id = "investment" >
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-[3rem] p-10 lg:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden"
-        >
-          {/* Background Decor */}
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"></div>
+      {/* Footer / Contact */}
+      < section className="py-20 bg-slate-50 border-t border-slate-200" id="investment" >
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-[3rem] p-10 lg:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden"
+          >
+            {/* Background Decor */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"></div>
 
-          {/* Reduced Title Size by ~10% (3xl->2xl, 4xl->3xl ish) */}
-          <h2 className="text-[1.7rem] lg:text-[2.25rem] font-black text-slate-900 mb-6">
-            파트너십 및 광고문의
-          </h2>
-          <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
-            MONGSTARZ와 함께 새로운 모바일 광고 시장을 선도할<br />
-            파트너 여러분을 기다립니다.
-          </p>
+            {/* Reduced Title Size by ~10% (3xl->2xl, 4xl->3xl ish) */}
+            <h2 className="text-[1.7rem] lg:text-[2.25rem] font-black text-slate-900 mb-6">
+              파트너십 및 광고문의
+            </h2>
+            <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
+              MONGSTARZ와 함께 새로운 모바일 광고 시장을 선도할<br />
+              파트너 여러분을 기다립니다.
+            </p>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-violet-200 transition-colors">
-              <div className="text-xs font-bold text-violet-500 uppercase tracking-widest mb-2">Contact Person</div>
-              <div className="text-xl font-bold text-slate-800">담당자</div>
-              <div className="text-slate-500 font-medium mt-1">010-8825-1279</div>
+            <div className="flex flex-col md:flex-row gap-6 justify-center">
+              <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-violet-200 transition-colors">
+                <div className="text-xs font-bold text-violet-500 uppercase tracking-widest mb-2">Contact Person</div>
+                <div className="text-xl font-bold text-slate-800">담당자</div>
+                <div className="text-slate-500 font-medium mt-1">010-8825-1279</div>
+              </div>
+              <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 transition-colors">
+                <div className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-2">Email</div>
+                <div className="text-xl font-bold text-slate-800">sasking@naver.com</div>
+                <div className="text-slate-500 font-medium mt-1">Response within 24h</div>
+              </div>
             </div>
-            <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 transition-colors">
-              <div className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-2">Email</div>
-              <div className="text-xl font-bold text-slate-800">sasking@naver.com</div>
-              <div className="text-slate-500 font-medium mt-1">Response within 24h</div>
-            </div>
-          </div>
 
-          <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
-            <div className="flex items-center gap-2 opacity-50">
-              <span className="font-black text-slate-400">MONGSTARZ</span>
-              <span className="text-slate-300">© 2024 All Rights Reserved.</span>
+            <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+              <div className="flex items-center gap-2 opacity-50">
+                <span className="font-black text-slate-400">MONGSTARZ</span>
+                <span className="text-slate-300">© 2024 All Rights Reserved.</span>
+              </div>
             </div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
       </section >
 
-    {/* Footer */ }
-    < Footer />
+      {/* Footer */}
+      < Footer />
     </div >
   );
 }
