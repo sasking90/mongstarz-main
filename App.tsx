@@ -788,148 +788,108 @@ export default function App() {
                         labelStyle={{ color: '#64748b', fontWeight: '600', marginBottom: '4px', fontSize: '12px' }}
                         formatter={(value: any) => [`${value}조 원`, '시장 규모']}
                       />
-                      <Bar
-                        dataKey="size"
-                        radius={[12, 12, 12, 12]}
-                        animationDuration={800}
-                        animationEasing="ease-out"
-                      >
-                        {marketData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={`url(#barGradient${entry.year})`} filter="url(#barShadow)" />
-                        ))}
-                        <LabelList
-                          dataKey="label"
-                          position="top"
-                          style={{
-                            fill: '#334155',
-                            fontWeight: 800,
-                            fontSize: '14px',
-                            textAnchor: 'middle',
-                          }}
-                          offset={10}
-                        />
-                        <LabelList
-                          dataKey="growth"
-                          position="top"
-                          content={(props: any) => {
-                            const { x, y, width, value } = props;
-                            return (
-                              <g>
-                                <rect x={x + width / 2 - 24} y={y - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
-                                <text
-                                  x={x + width / 2}
-                                  y={y - 40}
-                                  fill="#059669"
-                                  fontSize="11px"
-                                  fontWeight="800"
-                                  textAnchor="middle"
-                                  dominantBaseline="middle"
-                                >
-                                  ▲ {value}%
-                                </text>
-                              </g>
-                            );
+                      );
                           }}
                         />
-                      </Bar>
-                    </BarChart>
-                  </ResponsiveContainer>
-                </motion.div>
-              </div>
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </motion.div>
             </div>
-          </motion.div>
         </div>
+      </motion.div>
+    </div>
       </section >
 
-      {/* Advertising Contents - Draggable Marquee Layout */}
-      < section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="contents" >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 lg:mb-24">
-            <span className="text-fuchsia-600 font-bold tracking-widest text-xs uppercase bg-fuchsia-50 px-4 py-1.5 rounded-full border border-fuchsia-100">Advertising Contents</span>
-            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
-              몰입도 높은<br className="lg:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">광고 상품 라인업</span>
-            </h2>
-          </div>
+    {/* Advertising Contents - Draggable Marquee Layout */ }
+    < section className = "py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id = "contents" >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 lg:mb-24">
+          <span className="text-fuchsia-600 font-bold tracking-widest text-xs uppercase bg-fuchsia-50 px-4 py-1.5 rounded-full border border-fuchsia-100">Advertising Contents</span>
+          <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
+            몰입도 높은<br className="lg:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">광고 상품 라인업</span>
+          </h2>
         </div>
+      </div>
 
-        {/* Marquee Container with Drag Support */}
-        <div className="relative w-full overflow-hidden py-10">
-          {/* Gradient Masks - Opacity reduced by ~30% (from 100% to 70% using /70 modifier) */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-r from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-l from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
+  {/* Marquee Container with Drag Support */ }
+  <div className="relative w-full overflow-hidden py-10">
+    {/* Gradient Masks - Opacity reduced by ~30% (from 100% to 70% using /70 modifier) */}
+    <div className="absolute left-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-r from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
+    <div className="absolute right-0 top-0 bottom-0 w-12 lg:w-40 bg-gradient-to-l from-slate-50/70 to-transparent z-20 pointer-events-none"></div>
 
-          {/* Scrolling Track - Using JS ref for scroll control to allow dragging */}
-          <div
-            ref={scrollRef}
-            className="flex w-full overflow-x-auto no-scrollbar gap-6 lg:gap-10 px-4 lg:px-10"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
-            style={{ scrollBehavior: 'auto' }} // Disable smooth scroll for JS animation to work properly
-          >
-            {/* Duplicate items for infinite loop (3 sets for bidirectional infinite scroll) */}
-            {[...adProducts, ...adProducts, ...adProducts].map((product, index) => (
-              <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
-                <AdContentItem
-                  disableAnimation={true}
-                  delay={0}
-                  title={product.title}
-                  subTitle={product.subTitle}
-                  desc={product.desc}
-                  tags={product.tags}
-                  effect={product.effect}
-                  image={product.image}
-                  icon={product.icon}
-                  color={product.color}
-                  accentColor={product.accentColor}
-                />
-              </div>
-            ))}
-          </div>
+    {/* Scrolling Track - Using JS ref for scroll control to allow dragging */}
+    <div
+      ref={scrollRef}
+      className="flex w-full overflow-x-auto no-scrollbar gap-6 lg:gap-10 px-4 lg:px-10"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
+      style={{ scrollBehavior: 'auto' }} // Disable smooth scroll for JS animation to work properly
+    >
+      {/* Duplicate items for infinite loop (3 sets for bidirectional infinite scroll) */}
+      {[...adProducts, ...adProducts, ...adProducts].map((product, index) => (
+        <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
+          <AdContentItem
+            disableAnimation={true}
+            delay={0}
+            title={product.title}
+            subTitle={product.subTitle}
+            desc={product.desc}
+            tags={product.tags}
+            effect={product.effect}
+            image={product.image}
+            icon={product.icon}
+            color={product.color}
+            accentColor={product.accentColor}
+          />
         </div>
+      ))}
+    </div>
+  </div>
       </section >
 
-      {/* Core Features */}
-      < section className="py-20 lg:py-32 bg-white" id="features" >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 lg:mb-24">
-            <span className="text-cyan-600 font-bold tracking-widest text-xs uppercase bg-cyan-50 px-4 py-1.5 rounded-full border border-cyan-100">Why MONGSTARZ?</span>
-            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
-              플랫폼 경쟁력
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            <FeatureCard
-              delay={0.1}
-              icon={Target}
-              title="Hyper-Local 타겟팅"
-              sub="Precision"
-              highlight="Hit!"
-              description="반경 500m 이내 사용자를 정밀 타겟팅하여 낭비 없는 광고 집행이 가능합니다. 지역 소상공인부터 대기업 프랜차이즈까지 최적화된 효율을 제공합니다."
-            />
-            <FeatureCard
-              delay={0.2}
-              icon={Gamepad2}
-              title="몰입형 게이미피케이션"
-              sub="Fun Factor"
-              highlight="Play"
-              description="단순 노출을 넘어, 게임/퀴즈/미션을 통해 사용자가 자발적으로 광고에 참여하게 만듭니다. 광고를 콘텐츠로 소비하는 새로운 경험을 선사합니다."
-            />
-            <FeatureCard
-              delay={0.3}
-              icon={TrendingUp}
-              title="데이터 기반 성과 분석"
-              sub="Analytics"
-              highlight="Grow"
-              description="클릭, 체류, 구매 전환 등 사용자 행동 데이터를 실시간으로 분석하여 광고주에게 투명한 리포트와 인사이트를 제공합니다."
-            />
-          </div>
+    {/* Core Features */ }
+    < section className = "py-20 lg:py-32 bg-white" id = "features" >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 lg:mb-24">
+          <span className="text-cyan-600 font-bold tracking-widest text-xs uppercase bg-cyan-50 px-4 py-1.5 rounded-full border border-cyan-100">Why MONGSTARZ?</span>
+          <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900">
+            플랫폼 경쟁력
+          </h2>
         </div>
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+          <FeatureCard
+            delay={0.1}
+            icon={Target}
+            title="Hyper-Local 타겟팅"
+            sub="Precision"
+            highlight="Hit!"
+            description="반경 500m 이내 사용자를 정밀 타겟팅하여 낭비 없는 광고 집행이 가능합니다. 지역 소상공인부터 대기업 프랜차이즈까지 최적화된 효율을 제공합니다."
+          />
+          <FeatureCard
+            delay={0.2}
+            icon={Gamepad2}
+            title="몰입형 게이미피케이션"
+            sub="Fun Factor"
+            highlight="Play"
+            description="단순 노출을 넘어, 게임/퀴즈/미션을 통해 사용자가 자발적으로 광고에 참여하게 만듭니다. 광고를 콘텐츠로 소비하는 새로운 경험을 선사합니다."
+          />
+          <FeatureCard
+            delay={0.3}
+            icon={TrendingUp}
+            title="데이터 기반 성과 분석"
+            sub="Analytics"
+            highlight="Grow"
+            description="클릭, 체류, 구매 전환 등 사용자 행동 데이터를 실시간으로 분석하여 광고주에게 투명한 리포트와 인사이트를 제공합니다."
+          />
+        </div>
+      </div>
       </section >
 
-      {/* Business Model & Revenue (Redesigned Layout) */}
-      < section className="py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id="revenue" >
+    {/* Business Model & Revenue (Redesigned Layout) */ }
+    < section className = "py-20 lg:py-32 bg-slate-50 relative overflow-hidden" id = "revenue" >
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-violet-200/30 rounded-full blur-[100px]"></div>
           <div className="absolute top-40 -left-20 w-[400px] h-[400px] bg-cyan-200/30 rounded-full blur-[100px]"></div>
@@ -1024,52 +984,52 @@ export default function App() {
         </div>
       </section >
 
-      {/* Footer / Contact */}
-      < section className="py-20 bg-slate-50 border-t border-slate-200" id="investment" >
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-[3rem] p-10 lg:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden"
-          >
-            {/* Background Decor */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"></div>
+    {/* Footer / Contact */ }
+    < section className = "py-20 bg-slate-50 border-t border-slate-200" id = "investment" >
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[3rem] p-10 lg:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden"
+        >
+          {/* Background Decor */}
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"></div>
 
-            {/* Reduced Title Size by ~10% (3xl->2xl, 4xl->3xl ish) */}
-            <h2 className="text-[1.7rem] lg:text-[2.25rem] font-black text-slate-900 mb-6">
-              파트너십 및 광고문의
-            </h2>
-            <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
-              MONGSTARZ와 함께 새로운 모바일 광고 시장을 선도할<br />
-              파트너 여러분을 기다립니다.
-            </p>
+          {/* Reduced Title Size by ~10% (3xl->2xl, 4xl->3xl ish) */}
+          <h2 className="text-[1.7rem] lg:text-[2.25rem] font-black text-slate-900 mb-6">
+            파트너십 및 광고문의
+          </h2>
+          <p className="text-slate-600 text-lg mb-10 leading-relaxed font-medium">
+            MONGSTARZ와 함께 새로운 모바일 광고 시장을 선도할<br />
+            파트너 여러분을 기다립니다.
+          </p>
 
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-violet-200 transition-colors">
-                <div className="text-xs font-bold text-violet-500 uppercase tracking-widest mb-2">Contact Person</div>
-                <div className="text-xl font-bold text-slate-800">담당자</div>
-                <div className="text-slate-500 font-medium mt-1">010-8825-1279</div>
-              </div>
-              <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 transition-colors">
-                <div className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-2">Email</div>
-                <div className="text-xl font-bold text-slate-800">sasking@naver.com</div>
-                <div className="text-slate-500 font-medium mt-1">Response within 24h</div>
-              </div>
+          <div className="flex flex-col md:flex-row gap-6 justify-center">
+            <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-violet-200 transition-colors">
+              <div className="text-xs font-bold text-violet-500 uppercase tracking-widest mb-2">Contact Person</div>
+              <div className="text-xl font-bold text-slate-800">담당자</div>
+              <div className="text-slate-500 font-medium mt-1">010-8825-1279</div>
             </div>
-
-            <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
-              <div className="flex items-center gap-2 opacity-50">
-                <span className="font-black text-slate-400">MONGSTARZ</span>
-                <span className="text-slate-300">© 2024 All Rights Reserved.</span>
-              </div>
+            <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 transition-colors">
+              <div className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-2">Email</div>
+              <div className="text-xl font-bold text-slate-800">sasking@naver.com</div>
+              <div className="text-slate-500 font-medium mt-1">Response within 24h</div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
+            <div className="flex items-center gap-2 opacity-50">
+              <span className="font-black text-slate-400">MONGSTARZ</span>
+              <span className="text-slate-300">© 2024 All Rights Reserved.</span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
       </section >
 
-      {/* Footer */}
-      < Footer />
+    {/* Footer */ }
+    < Footer />
     </div >
   );
 }
