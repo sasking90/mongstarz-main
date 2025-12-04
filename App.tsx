@@ -282,19 +282,34 @@ export default function App() {
   const graphRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll logic for Marquee
+  // Auto-scroll logic for Marquee
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
+    // Initialize scroll position to the middle set
+    if (scrollContainer.scrollLeft === 0) {
+      scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+    }
+
     let animationFrameId: number;
 
     const scroll = () => {
-      if (!isPaused && scrollContainer) {
-        scrollContainer.scrollLeft += 1.0; // 속도 2배 증가 (0.5 → 1.0)
+      if (scrollContainer) {
+        const oneSetWidth = scrollContainer.scrollWidth / 3;
 
-        // Reset scroll when reaching the end (infinite loop)
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0;
+        // Auto-scroll only when not paused
+        if (!isPaused) {
+          scrollContainer.scrollLeft += 1.0;
+        }
+
+        // Infinite scroll logic (Bidirectional)
+        if (scrollContainer.scrollLeft <= 0) {
+          // If reached start (left), jump to start of middle set
+          scrollContainer.scrollLeft = oneSetWidth;
+        } else if (scrollContainer.scrollLeft >= oneSetWidth * 2) {
+          // If reached end of middle set (right), jump to start of middle set
+          scrollContainer.scrollLeft = oneSetWidth;
         }
       }
       animationFrameId = requestAnimationFrame(scroll);
@@ -816,8 +831,8 @@ export default function App() {
             onTouchEnd={() => setIsPaused(false)}
             style={{ scrollBehavior: 'auto' }} // Disable smooth scroll for JS animation to work properly
           >
-            {/* Duplicate items for infinite loop */}
-            {[...adProducts, ...adProducts].map((product, index) => (
+            {/* Duplicate items for infinite loop (3 sets for bidirectional infinite scroll) */}
+            {[...adProducts, ...adProducts, ...adProducts].map((product, index) => (
               <div key={`${product.id}-${index}`} className="w-[280px] sm:w-[340px] lg:w-[400px] flex-shrink-0">
                 <AdContentItem
                   disableAnimation={true}
