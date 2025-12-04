@@ -937,9 +937,15 @@ export default function App() {
                 </div>
 
                 <div className="relative my-4 md:my-0">
-                  <div className="inline-flex p-6 rounded-full bg-violet-50 ring-8 ring-violet-50/50 relative z-10">
-                    <Ticket className="w-16 h-16 text-violet-600" />
-                  </div>
+                  <motion.div
+                    initial={{ scale: 0.8, rotate: -10 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+                    transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
+                    className="inline-flex p-6 rounded-[2rem] bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/50 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_2px_8px_-2px_rgba(139,92,246,0.1)] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_4px_16px_-2px_rgba(139,92,246,0.2)] transition-all duration-700 border border-violet-100/40 hover:border-fuchsia-200/60 hover:scale-110 hover:rotate-3 relative z-10"
+                  >
+                    <Ticket className="w-16 h-16 text-violet-600 hover:text-fuchsia-600 transition-colors duration-300" />
+                  </motion.div>
                   <div className="absolute top-1/2 left-full w-20 h-0.5 bg-slate-200 hidden md:block"></div>
                   <div className="absolute top-1/2 right-full w-20 h-0.5 bg-slate-200 hidden md:block"></div>
                 </div>
