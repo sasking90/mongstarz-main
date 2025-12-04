@@ -729,7 +729,7 @@ export default function App() {
                               <rect x={x + width / 2 - 24} y={y - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
                               <text
                                 x={x + width / 2}
-                                y={y - 36}
+                                y={y - 40}
                                 fill="#059669"
                                 fontSize="11px"
                                 fontWeight="800"
