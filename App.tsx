@@ -153,6 +153,7 @@ const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: 
 );
 
 // Enhanced Ad Content Component
+// Enhanced Ad Content Component
 const AdContentItem: React.FC<{
   title: string;
   subTitle: string;
@@ -166,12 +167,31 @@ const AdContentItem: React.FC<{
   accentColor: string;
   disableAnimation?: boolean;
 }> = ({ title, subTitle, desc, effect, tags, image, icon: Icon, color, delay, accentColor, disableAnimation }) => {
-  const content = (
+  // Animation props based on disableAnimation flag
+  const cardAnimation = disableAnimation ? {} : {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false, margin: "-50px", amount: 0.3 },
+    transition: { delay, duration: 0.3, type: "spring" }
+  };
+
+  const imageAnimation = disableAnimation ? {} : {
+    initial: { opacity: 0, scale: 0.95 },
+    whileInView: { opacity: 1, scale: 1 },
+    viewport: { once: false, margin: "-50px", amount: 0.3 },
+    transition: { delay: delay + 0.1, duration: 0.4 }
+  };
+
+  const iconAnimation = disableAnimation ? {} : {
+    initial: { scale: 0.8, rotate: -10 },
+    whileInView: { scale: 1, rotate: 0 },
+    viewport: { once: false, margin: "-50px", amount: 0.3 },
+    transition: { delay: delay + 0.15, duration: 0.3, type: "spring" }
+  };
+
+  return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-      transition={{ delay, duration: 0.3, type: "spring" }}
+      {...cardAnimation}
       className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-[0_15px_40px_-10px_rgba(148,163,184,0.1)] hover:shadow-[0_25px_60px_-12px_rgba(139,92,246,0.15)] border border-slate-100 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full select-none"
     >
       {/* Colorful Accent Glow - Reduced opacity */}
@@ -180,10 +200,7 @@ const AdContentItem: React.FC<{
 
       {/* Image Section - Uniform Height enforced (lg:h-80, h-56 for mobile) */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-        transition={{ delay: delay + 0.1, duration: 0.4 }}
+        {...imageAnimation}
         className="relative h-56 lg:h-80 w-full overflow-hidden bg-slate-100 order-1 flex-shrink-0"
       >
         <img
@@ -200,10 +217,7 @@ const AdContentItem: React.FC<{
       <div className="p-6 lg:p-8 flex flex-col bg-white order-2 flex-1 relative z-20">
         <div className="flex items-center justify-between mb-4 lg:mb-6">
           <motion.div
-            initial={{ scale: 0.8, rotate: -10 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            viewport={{ once: false, margin: "-50px", amount: 0.3 }}
-            transition={{ delay: delay + 0.15, duration: 0.3, type: "spring" }}
+            {...iconAnimation}
             className={`p-2.5 lg:p-3 rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-110 border border-slate-100 bg-slate-50`}
             style={{ color: color }}
           >
@@ -238,10 +252,6 @@ const AdContentItem: React.FC<{
       </div>
     </motion.div>
   );
-
-  if (disableAnimation) return content;
-
-  return content;
 };
 
 const AppIcon = ({ icon: Icon, label, color = "text-slate-700", bg = "bg-white", border = "border-slate-100" }: { icon: any, label: string, color?: string, bg?: string, border?: string }) => (
