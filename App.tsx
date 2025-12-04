@@ -849,7 +849,7 @@ export default function App() {
           <div className="text-center mb-16 lg:mb-24">
             <span className="text-violet-600 font-bold tracking-widest text-xs uppercase bg-violet-50 px-4 py-1.5 rounded-full border border-violet-100">Business Model</span>
             <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-8 text-slate-900 leading-tight">
-              선순환 수익 구조:<br />
+              선순환 수익 구조<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">Ticket Economy</span>
             </h2>
             <p className="text-slate-700 text-lg leading-relaxed mb-10 font-medium break-keep max-w-3xl mx-auto">
