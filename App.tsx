@@ -167,7 +167,11 @@ const AdContentItem: React.FC<{
   disableAnimation?: boolean;
 }> = ({ title, subTitle, desc, effect, tags, image, icon: Icon, color, delay, accentColor, disableAnimation }) => {
   const content = (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+      transition={{ delay, duration: 0.6, type: "spring" }}
       className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-[0_15px_40px_-10px_rgba(148,163,184,0.1)] hover:shadow-[0_25px_60px_-12px_rgba(139,92,246,0.15)] border border-slate-100 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full select-none"
     >
       {/* Colorful Accent Glow - Reduced opacity */}
@@ -175,7 +179,13 @@ const AdContentItem: React.FC<{
       <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(90deg, ${accentColor}, transparent)` }}></div>
 
       {/* Image Section - Uniform Height enforced (lg:h-80, h-56 for mobile) */}
-      <div className="relative h-56 lg:h-80 w-full overflow-hidden bg-slate-100 order-1 flex-shrink-0">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+        transition={{ delay: delay + 0.2, duration: 0.8 }}
+        className="relative h-56 lg:h-80 w-full overflow-hidden bg-slate-100 order-1 flex-shrink-0"
+      >
         <img
           src={image}
           alt={title}
@@ -184,14 +194,21 @@ const AdContentItem: React.FC<{
         />
         {/* Smooth Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
-      </div>
+      </motion.div>
 
       {/* Content Section - Placed at Bottom */}
       <div className="p-6 lg:p-8 flex flex-col bg-white order-2 flex-1 relative z-20">
         <div className="flex items-center justify-between mb-4 lg:mb-6">
-          <div className={`p-2.5 lg:p-3 rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-110 border border-slate-100 bg-slate-50`} style={{ color: color }}>
+          <motion.div
+            initial={{ scale: 0.8, rotate: -10 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: false, margin: "-50px", amount: 0.3 }}
+            transition={{ delay: delay + 0.3, duration: 0.6, type: "spring" }}
+            className={`p-2.5 lg:p-3 rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-110 border border-slate-100 bg-slate-50`}
+            style={{ color: color }}
+          >
             <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
-          </div>
+          </motion.div>
           <div className="flex gap-1.5 flex-wrap justify-end">
             {tags.slice(0, 2).map((tag, i) => (
               <span key={i} className="text-[9px] lg:text-[10px] font-bold px-2 lg:px-2.5 py-1 bg-slate-50 text-slate-700 rounded-full uppercase tracking-wide border border-slate-200 group-hover:border-slate-300 transition-colors">{tag}</span>
@@ -219,7 +236,7 @@ const AdContentItem: React.FC<{
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   if (disableAnimation) return content;
