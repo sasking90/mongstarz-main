@@ -576,7 +576,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
             <span className="text-violet-600 font-bold tracking-widest text-xs uppercase bg-violet-50 px-4 py-1.5 rounded-full border border-violet-100">Market Insight</span>
-            <h2 className="text-4xl lg:text-6xl font-black mt-8 mb-8 lg:mb-10 text-slate-900 leading-[1.1] tracking-[-0.01em]">
+            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900 leading-[1.1] tracking-[-0.01em]">
               '보상'이 곧 '마케팅'이 되는<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-500">차세대 광고 시장</span>의 도래
             </h2>
@@ -715,6 +715,7 @@ export default function App() {
                           fill: '#334155',
                           fontWeight: 800,
                           fontSize: '14px',
+                          textAnchor: 'middle',
                         }}
                         offset={10}
                       />
