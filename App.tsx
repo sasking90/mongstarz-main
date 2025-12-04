@@ -119,7 +119,7 @@ const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: 
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
+    viewport={{ once: false, margin: "-50px", amount: 0.3 }}
     transition={{ delay, duration: 0.6, type: "spring" }}
     className="bg-white p-10 lg:p-12 rounded-[2.5rem] shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(0,0,0,0.08),0_16px_48px_-8px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_16px_0_rgba(139,92,246,0.08),0_12px_32px_-4px_rgba(139,92,246,0.16),0_24px_64px_-8px_rgba(139,92,246,0.24)] transition-all duration-700 ease-out hover:-translate-y-4 hover:scale-[1.02] border border-slate-100/50 hover:border-violet-200/60 group relative overflow-hidden h-full backdrop-blur-sm bg-gradient-to-br from-white via-white to-slate-50/30"
   >
