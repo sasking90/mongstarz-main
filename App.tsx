@@ -201,8 +201,8 @@ const AdContentItem: React.FC<{
 
         <div className="mb-auto">
           <span className="text-[10px] lg:text-xs font-bold tracking-widest uppercase text-slate-500 mb-1.5 lg:mb-2 block">{subTitle}</span>
-          <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-3 lg:mb-4 leading-tight tracking-tight">{title}</h3>
-          <p className="text-slate-600 text-sm lg:text-[15px] leading-6 lg:leading-7 font-medium break-keep mb-5 lg:mb-6">
+          <h3 className="text-2xl lg:text-[1.75rem] font-black text-slate-900 mb-4 lg:mb-5 leading-[1.3] tracking-[-0.01em]">{title}</h3>
+          <p className="text-slate-600 text-[15px] lg:text-base leading-[1.75] font-medium break-keep mb-5 lg:mb-6">
             {desc}
           </p>
         </div>
