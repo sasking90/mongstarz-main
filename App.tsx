@@ -625,115 +625,126 @@ export default function App() {
 
           <motion.div
             ref={graphRef}
-            className="bg-slate-50 rounded-[3rem] p-6 lg:p-12 border border-slate-100 shadow-[inset_0_2px_20px_rgba(0,0,0,0.02)]"
+            className="bg-white rounded-[3rem] p-6 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-bold text-slate-900 mb-8 ml-4">Market Size Forecast</h3>
-            <div className="h-[300px] lg:h-[400px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart key={graphKey} data={marketData} margin={{ top: 30, right: 30, left: 20, bottom: 20 }}>
-                  <defs>
-                    <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#8b5cf6" stopOpacity={1} />
-                      <stop offset="50%" stopColor="#a855f7" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
-                    </linearGradient>
-                    <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#6366f1" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
-                    </linearGradient>
-                    <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#8b5cf6" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
-                    </linearGradient>
-                    <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#a855f7" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
-                    </linearGradient>
-                    <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#d946ef" stopOpacity={1} />
-                      <stop offset="100%" stopColor="#f472b6" stopOpacity={1} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" opacity={0.5} />
-                  <XAxis
-                    dataKey="year"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: '#475569', fontSize: 14, fontWeight: 700 }}
-                    dy={10}
-                    interval={0}
-                  />
-                  <YAxis
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: '#64748b', fontSize: 13, fontWeight: 600 }}
-                    dx={-5}
-                    tickFormatter={(value) => `${value}조`}
-                  />
-                  <Tooltip
-                    cursor={{ fill: '#f8fafc', opacity: 0.8 }}
-                    contentStyle={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                      backdropFilter: 'blur(12px)',
-                      borderRadius: '16px',
-                      border: '1px solid #e2e8f0',
-                      boxShadow: '0 8px 32px -8px rgba(139,92,246,0.25)',
-                      padding: '14px 20px'
-                    }}
-                    itemStyle={{ color: '#4c1d95', fontWeight: '800', fontSize: '16px' }}
-                    labelStyle={{ color: '#64748b', fontWeight: '700', marginBottom: '6px', fontSize: '13px' }}
-                    formatter={(value: any) => [`${value}조 원`, '시장 규모']}
-                  />
-                  <Bar
-                    dataKey="size"
-                    radius={[16, 16, 0, 0]}
-                    barSize={60}
-                    animationDuration={2000}
-                    animationEasing="ease-out"
-                    isAnimationActive={true}
-                    animationBegin={0}
-                  >
-                    {marketData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={`url(#barGradient${entry.year})`} />
-                    ))}
-                    <LabelList
-                      dataKey="label"
-                      position="top"
-                      style={{
-                        fill: '#1e293b',
-                        fontWeight: 800,
-                        fontSize: '15px',
-                      }}
-                      offset={12}
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+            <div className="relative z-10">
+              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-center">Market Size Forecast</h3>
+              <p className="text-slate-500 text-center mb-10 font-medium text-sm lg:text-base">지속적인 성장이 예측되는 리워드 광고 시장</p>
+
+              <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart key={graphKey} data={marketData} margin={{ top: 40, right: 10, left: -20, bottom: 20 }} barSize={50}>
+                    <defs>
+                      <filter id="barShadow" height="130%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                        <feOffset dx="0" dy="4" result="offsetblur" />
+                        <feFlood floodColor="rgba(139, 92, 246, 0.3)" />
+                        <feComposite in2="offsetblur" operator="in" />
+                        <feMerge>
+                          <feMergeNode />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                      <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#818cf8" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#6366f1" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#a78bfa" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#c084fc" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
+                      </linearGradient>
+                      <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#e879f9" stopOpacity={1} />
+                        <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                    <XAxis
+                      dataKey="year"
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#64748b', fontSize: 13, fontWeight: 700 }}
+                      dy={15}
                     />
-                    <LabelList
-                      dataKey="growth"
-                      position="top"
-                      content={(props: any) => {
-                        const { x, y, width, value } = props;
-                        return (
-                          <g>
-                            <text
-                              x={x + width / 2}
-                              y={y - 25}
-                              fill="#10b981"
-                              fontSize="12px"
-                              fontWeight="700"
-                              textAnchor="middle"
-                            >
-                              ▲ {value}%
-                            </text>
-                          </g>
-                        );
-                      }}
+                    <YAxis
+                      axisLine={false}
+                      tickLine={false}
+                      tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
+                      tickFormatter={(value) => `${value}조`}
+                      width={40}
                     />
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+                    <Tooltip
+                      cursor={{ fill: '#f8fafc', opacity: 0.5 }}
+                      contentStyle={{
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        backdropFilter: 'blur(8px)',
+                        borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.5)',
+                        boxShadow: '0 10px 30px -5px rgba(0,0,0,0.1)',
+                        padding: '12px 16px'
+                      }}
+                      itemStyle={{ color: '#1e293b', fontWeight: '700', fontSize: '14px' }}
+                      labelStyle={{ color: '#64748b', fontWeight: '600', marginBottom: '4px', fontSize: '12px' }}
+                      formatter={(value: any) => [`${value}조 원`, '시장 규모']}
+                    />
+                    <Bar
+                      dataKey="size"
+                      radius={[12, 12, 12, 12]}
+                      animationDuration={1500}
+                      animationEasing="ease-out"
+                    >
+                      {marketData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={`url(#barGradient${entry.year})`} filter="url(#barShadow)" />
+                      ))}
+                      <LabelList
+                        dataKey="label"
+                        position="top"
+                        style={{
+                          fill: '#334155',
+                          fontWeight: 800,
+                          fontSize: '14px',
+                        }}
+                        offset={10}
+                      />
+                      <LabelList
+                        dataKey="growth"
+                        position="top"
+                        content={(props: any) => {
+                          const { x, y, width, value } = props;
+                          return (
+                            <g>
+                              <rect x={x + width / 2 - 24} y={y - 32} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
+                              <text
+                                x={x + width / 2}
+                                y={y - 18}
+                                fill="#059669"
+                                fontSize="11px"
+                                fontWeight="800"
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                              >
+                                ▲ {value}%
+                              </text>
+                            </g>
+                          );
+                        }}
+                      />
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </motion.div>
         </div>
