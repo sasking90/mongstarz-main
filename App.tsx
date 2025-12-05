@@ -36,7 +36,7 @@ const adProducts = [
     desc: "참가권을 사용하여 광고에 진입 후, 미니게임을 즐기며 '타임(Time)' 자원을 대량으로 획득하는 컨텐츠입니다. 짧은 시간 내 집중적인 사용자 참여를 유도하여 폭발적인 트래픽과 높은 클릭률(CTR)을 보장합니다.",
     tags: ['Mass Traffic', 'Earning', 'High CTR'],
     effect: "1시간 내 평균 참여자 5만 명, 클릭률 15% 이상 달성",
-    image: "/assets/time_pick.png",
+    image: "/assets/time_pick_v2.png",
     icon: Target,
     color: "#f59e0b", // Amber
     accentColor: "#fef3c7"
@@ -48,7 +48,7 @@ const adProducts = [
     desc: "획득한 '타임'을 소모하여 제한 시간 내에 고가 경품 획득에 도전하는 긴박감 넘치는 게임입니다. 지속적인 재도전을 자극하여 사용자의 앱 체류 시간을 극대화하고 반복적인 광고 노출 효과를 창출합니다.",
     tags: ['Retention', 'Play', 'Viral'],
     effect: "평균 체류 시간 15분 이상, 재접속률 40% 증가",
-    image: "https://images.unsplash.com/photo-1561414927-6d86591d0c4f?auto=format&fit=crop&w=800&q=80", // Keep original
+    image: "/assets/time_attack_v2.png",
     icon: Timer,
     color: "#ef4444", // Red
     accentColor: "#fee2e2"
@@ -164,7 +164,6 @@ const FeatureCard = ({ icon: Icon, title, sub, description, delay, highlight }: 
 };
 
 // Enhanced Ad Content Component
-// Enhanced Ad Content Component
 const AdContentItem: React.FC<{
   title: string;
   subTitle: string;
@@ -261,7 +260,7 @@ const AdContentItem: React.FC<{
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
 
