@@ -630,7 +630,13 @@ export default function App() {
                 </div>
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>Îß?/span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                    <div className="h-full bg-violet-500 w-[80%] rounded-full"></div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "80%" }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        viewport={{ once: false }}
+                        className="h-full bg-violet-500 rounded-full"
+                    ></motion.div>
                 </div>
                 <p className="text-sm text-slate-600 font-bold">Íµ?Ç¥ Î¶¨Ïõå?????§ÏÇ¨?©Ïûê ??(2024)</p>
             </div>
@@ -642,7 +648,13 @@ export default function App() {
                 </div>
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                    <div className="h-full bg-fuchsia-500 w-[60%] rounded-full"></div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "60%" }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        viewport={{ once: false }}
+                        className="h-full bg-fuchsia-500 rounded-full"
+                    ></motion.div>
                 </div>
                 <p className="text-sm text-slate-600 font-bold">?∞ÌèâÍ∑??úÏû• ?±Ïû•Î•?(2021-2025)</p>
             </div>
@@ -654,7 +666,13 @@ export default function App() {
                 </div>
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>Ï°?/span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                    <div className="h-full bg-amber-500 w-[90%] rounded-full"></div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "90%" }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        viewport={{ once: false }}
+                        className="h-full bg-amber-500 rounded-full"
+                    ></motion.div>
                 </div>
                 <p className="text-sm text-slate-600 font-bold">2025???àÏÉÅ ?ÑÏ≤¥ ?úÏû• Í∑úÎ™®</p>
             </div>
