@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
+﻿import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { motion } from 'framer-motion';
@@ -14,10 +14,10 @@ import {
 
 // Enhanced Market Data with more detail
 const marketData = [
-  { year: '2021', size: 8, label: '8조', growth: 12 },
-  { year: '2022', size: 8.4, label: '8.4조', growth: 5 },
-  { year: '2023', size: 8.7, label: '8.7조', growth: 4 },
-  { year: '2025', size: 9.2, label: '9.2조', growth: 6 },
+    { year: '2021', size: 8, label: '8조', growth: 12 },
+    { year: '2022', size: 8.4, label: '8.4조', growth: 5 },
+    { year: '2023', size: 8.7, label: '8.7조', growth: 4 },
+    { year: '2025', size: 9.2, label: '9.2조', growth: 6 },
 ];
 
 const revenueData = [
@@ -608,146 +608,137 @@ export default function App() {
                 </div>
             </section>
 
-{/* Market Stats with Enhanced Visuals */ }
-<section className="py-24 lg:py-40 bg-white relative" id="market">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-            <span className="text-violet-600 font-bold tracking-widest text-xs uppercase bg-violet-50 px-4 py-1.5 rounded-full border border-violet-100">Market Insight</span>
-            <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900 leading-[1.1] tracking-[-0.01em]">
-                '보상'??�?'마�??????�는<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-500">차세?� 광고 ?�장</span>???�래
-            </h2>
-            <p className="text-slate-600 text-lg lg:text-xl break-keep font-medium leading-relaxed">
-                ?�통?�인 ?�스?�레??광고(DA)???�율 ?�?�로 ?�해,<br className="hidden md:block" /> ?�용?��? ?�동?�으�?참여?�고 보상???�득?�는 <strong>Reward-based Ad Tech</strong>가 ?�일???�?�으�??�오르고 ?�습?�다.
-            </p>
-        </div>
+            {/* Market Stats with Enhanced Visuals */}
+            <section className="py-24 lg:py-40 bg-white relative" id="market">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                        <span className="text-violet-600 font-bold tracking-widest text-xs uppercase bg-violet-50 px-4 py-1.5 rounded-full border border-violet-100">Market Insight</span>
+                        <h2 className="text-3xl lg:text-5xl font-black mt-6 mb-6 text-slate-900 leading-[1.1] tracking-[-0.01em]">
+                            '보상'??�?'마�??????�는<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-500">차세?� 광고 ?�장</span>???�래
+                        </h2>
+                        <p className="text-slate-600 text-lg lg:text-xl break-keep font-medium leading-relaxed">
+                            ?�통?�인 ?�스?�레??광고(DA)???�율 ?�?�로 ?�해,<br className="hidden md:block" /> ?�용?��? ?�동?�으�?참여?�고 보상???�득?�는 <strong>Reward-based Ad Tech</strong>가 ?�일???�?�으�??�오르고 ?�습?�다.
+                        </p>
+                    </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
-            <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-violet-50/20 rounded-[2.5rem] border border-violet-100/60 hover:border-violet-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(139,92,246,0.08),0_16px_48px_-8px_rgba(139,92,246,0.12)] hover:shadow-[0_4px_12px_0_rgba(139,92,246,0.1),0_12px_32px_-4px_rgba(139,92,246,0.2),0_24px_64px_-8px_rgba(139,92,246,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
-                <div className="flex items-center justify-between mb-6 lg:mb-8">
-                    <div className="p-4 lg:p-5 bg-gradient-to-br from-violet-50 to-violet-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(139,92,246,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-violet-200/40"><Users className="text-violet-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
-                    <div className="text-[10px] lg:text-xs font-bold text-violet-600 bg-violet-50 px-3 py-1.5 rounded-lg border border-violet-100">MAU Growth</div>
-                </div>
-              <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>만</span></div>
-                <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
+                    <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
+                        <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-violet-50/20 rounded-[2.5rem] border border-violet-100/60 hover:border-violet-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(139,92,246,0.08),0_16px_48px_-8px_rgba(139,92,246,0.12)] hover:shadow-[0_4px_12px_0_rgba(139,92,246,0.1),0_12px_32px_-4px_rgba(139,92,246,0.2),0_24px_64px_-8px_rgba(139,92,246,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
+                            <div className="flex items-center justify-between mb-6 lg:mb-8">
+                                <div className="p-4 lg:p-5 bg-gradient-to-br from-violet-50 to-violet-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(139,92,246,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-violet-200/40"><Users className="text-violet-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
+                                <div className="text-[10px] lg:text-xs font-bold text-violet-600 bg-violet-50 px-3 py-1.5 rounded-lg border border-violet-100">MAU Growth</div>
+                            </div>
+                            <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>만</span></div>
+                            <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
+                                <motion.div
+                                    initial={{ width: "0%" }}
+                                    whileInView={{ width: "80%" }}
+                                    viewport={{ once: false, amount: 0.3 }}
+                                    transition={{ duration: 1.5, ease: "easeOut" }}
+                                    className="h-full bg-violet-500 rounded-full"
+                                ></motion.div>
+                            </div>
+                            <p className="text-sm text-slate-600 font-bold">�?�� 리워?????�사?�자 ??(2024)</p>
+                        </div>
+
+                        <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-fuchsia-50/20 rounded-[2.5rem] border border-fuchsia-100/60 hover:border-fuchsia-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(232,121,249,0.08),0_16px_48px_-8px_rgba(232,121,249,0.12)] hover:shadow-[0_4px_12px_0_rgba(232,121,249,0.1),0_12px_32px_-4px_rgba(232,121,249,0.2),0_24px_64px_-8px_rgba(232,121,249,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
+                            <div className="flex items-center justify-between mb-6 lg:mb-8">
+                                <div className="p-4 lg:p-5 bg-gradient-to-br from-fuchsia-50 to-fuchsia-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(232,121,249,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(232,121,249,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-fuchsia-200/40"><TrendingUp className="text-fuchsia-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
+                                <div className="text-[10px] lg:text-xs font-bold text-fuchsia-600 bg-fuchsia-50 px-3 py-1.5 rounded-lg border border-fuchsia-100">CAGR</div>
+                            </div>
+                            <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
+                            <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
+                                <motion.div
+                                    initial={{ width: "0%" }}
+                                    whileInView={{ width: "60%" }}
+                                    viewport={{ once: false, amount: 0.3 }}
+                                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                                    className="h-full bg-fuchsia-500 rounded-full"
+                                ></motion.div>
+                            </div>
+                            <p className="text-sm text-slate-600 font-bold">?�평�??�장 ?�장�?(2021-2025)</p>
+                        </div>
+
+                        <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-amber-50/20 rounded-[2.5rem] border border-amber-100/60 hover:border-amber-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(251,191,36,0.08),0_16px_48px_-8px_rgba(251,191,36,0.12)] hover:shadow-[0_4px_12px_0_rgba(251,191,36,0.1),0_12px_32px_-4px_rgba(251,191,36,0.2),0_24px_64px_-8px_rgba(251,191,36,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
+                            <div className="flex items-center justify-between mb-6 lg:mb-8">
+                                <div className="p-4 lg:p-5 bg-gradient-to-br from-amber-50 to-amber-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(251,191,36,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(251,191,36,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-amber-200/40"><PieChart className="text-amber-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
+                                <div className="text-[10px] lg:text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-100">Total Market</div>
+                            </div>
+                            <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>조</span></div>
+                            <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
+                                <motion.div
+                                    initial={{ width: "0%" }}
+                                    whileInView={{ width: "90%" }}
+                                    viewport={{ once: false, amount: 0.3 }}
+                                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
+                                    className="h-full bg-amber-500 rounded-full"
+                                ></motion.div>
+                            </div>
+                            <p className="text-sm text-slate-600 font-bold">2025???�상 ?�체 ?�장 규모</p>
+                        </div>
+                    </div>
+
                     <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
-                        variants={{
-                            hidden: { width: "0%" },
-                            visible: { width: "80%", transition: { duration: 1.5, ease: "easeOut" } }
-                        }}
-                        className="h-full bg-violet-500 rounded-full"
-                    ></motion.div>
-                </div>
-                <p className="text-sm text-slate-600 font-bold">�?�� 리워?????�사?�자 ??(2024)</p>
-            </div>
+                        ref={graphRef}
+                        className="bg-white rounded-[3rem] p-6 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] relative overflow-hidden"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, margin: "-100px" }}
+                        onViewportEnter={() => setGraphKey(prev => prev + 1)}
+                        transition={{ duration: 0.6 }}
+                    >
+                        {/* Background Decoration */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-            <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-fuchsia-50/20 rounded-[2.5rem] border border-fuchsia-100/60 hover:border-fuchsia-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(232,121,249,0.08),0_16px_48px_-8px_rgba(232,121,249,0.12)] hover:shadow-[0_4px_12px_0_rgba(232,121,249,0.1),0_12px_32px_-4px_rgba(232,121,249,0.2),0_24px_64px_-8px_rgba(232,121,249,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
-                <div className="flex items-center justify-between mb-6 lg:mb-8">
-                    <div className="p-4 lg:p-5 bg-gradient-to-br from-fuchsia-50 to-fuchsia-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(232,121,249,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(232,121,249,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-fuchsia-200/40"><TrendingUp className="text-fuchsia-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
-                    <div className="text-[10px] lg:text-xs font-bold text-fuchsia-600 bg-fuchsia-50 px-3 py-1.5 rounded-lg border border-fuchsia-100">CAGR</div>
-                </div>
-                <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
-                <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
-                        variants={{
-                            hidden: { width: "0%" },
-                            visible: { width: "60%", transition: { duration: 1.5, ease: "easeOut", delay: 0.2 } }
-                        }}
-                        className="h-full bg-fuchsia-500 rounded-full"
-                    ></motion.div>
-                </div>
-                <p className="text-sm text-slate-600 font-bold">?�평�??�장 ?�장�?(2021-2025)</p>
-            </div>
+                        <div className="relative z-10">
+                            <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-center">Market Size Forecast</h3>
+                            <p className="text-slate-500 text-center mb-10 font-medium text-sm lg:text-base">지?�적???�장???�측?�는 리워??광고 ?�장</p>
 
-            <div className="p-10 lg:p-12 bg-gradient-to-br from-white via-white to-amber-50/20 rounded-[2.5rem] border border-amber-100/60 hover:border-amber-300/60 transition-all duration-700 shadow-[0_2px_8px_0_rgba(0,0,0,0.04),0_8px_24px_-4px_rgba(251,191,36,0.08),0_16px_48px_-8px_rgba(251,191,36,0.12)] hover:shadow-[0_4px_12px_0_rgba(251,191,36,0.1),0_12px_32px_-4px_rgba(251,191,36,0.2),0_24px_64px_-8px_rgba(251,191,36,0.3)] hover:-translate-y-4 hover:scale-[1.02] group backdrop-blur-sm">
-                <div className="flex items-center justify-between mb-6 lg:mb-8">
-                    <div className="p-4 lg:p-5 bg-gradient-to-br from-amber-50 to-amber-100/60 rounded-2xl shadow-[0_2px_8px_-2px_rgba(251,191,36,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_4px_12px_-2px_rgba(251,191,36,0.25),inset_0_1px_0_rgba(255,255,255,0.7)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 border border-amber-200/40"><PieChart className="text-amber-600 w-6 h-6 lg:w-7 lg:h-7" /></div>
-                    <div className="text-[10px] lg:text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-100">Total Market</div>
-                </div>
-              <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>조</span></div>
-                <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false, amount: 0.3 }}
-                        variants={{
-                            hidden: { width: "0%" },
-                            visible: { width: "90%", transition: { duration: 1.5, ease: "easeOut", delay: 0.4 } }
-                        }}
-                        className="h-full bg-amber-500 rounded-full"
-                    ></motion.div>
-                </div>
-                <p className="text-sm text-slate-600 font-bold">2025???�상 ?�체 ?�장 규모</p>
-            </div>
-        </div>
-
-        <motion.div
-            ref={graphRef}
-            className="bg-white rounded-[3rem] p-6 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] relative overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
-            onViewportEnter={() => setGraphKey(prev => prev + 1)}
-            transition={{ duration: 0.6 }}
-        >
-            {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-violet-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
-
-            <div className="relative z-10">
-                <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-center">Market Size Forecast</h3>
-                <p className="text-slate-500 text-center mb-10 font-medium text-sm lg:text-base">지?�적???�장???�측?�는 리워??광고 ?�장</p>
-
-                <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart key={graphKey} data={marketData} margin={{ top: 60, right: 10, left: 0, bottom: 20 }} barSize={50}>
-                            <defs>
-                                <filter id="barShadow" height="130%">
-                                    <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
-                                    <feOffset dx="0" dy="4" result="offsetblur" />
-                                    <feFlood floodColor="rgba(139, 92, 246, 0.3)" />
-                                    <feComposite in2="offsetblur" operator="in" />
-                                    <feMerge>
-                                        <feMergeNode />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                                <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#818cf8" stopOpacity={1} />
-                                    <stop offset="100%" stopColor="#6366f1" stopOpacity={1} />
-                                </linearGradient>
-                                <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#a78bfa" stopOpacity={1} />
-                                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
-                                </linearGradient>
-                                <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#c084fc" stopOpacity={1} />
-                                    <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
-                                </linearGradient>
-                                <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#e879f9" stopOpacity={1} />
-                                    <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
-                                </linearGradient>
-                            </defs>
-                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                            <XAxis
-                                dataKey="year"
-                                axisLine={false}
-                                tickLine={false}
-                                tick={{ fill: '#64748b', fontSize: 13, fontWeight: 700 }}
-                                dy={15}
-                            />
-                            <YAxis
-                                axisLine={false}
-                                tickLine={false}
-                                tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
-                                tickFormatter={(value) => `${value}�?}
+                            <div className="h-[320px] lg:h-[450px] w-full flex justify-center">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart key={graphKey} data={marketData} margin={{ top: 60, right: 10, left: 0, bottom: 20 }} barSize={50}>
+                                        <defs>
+                                            <filter id="barShadow" height="130%">
+                                                <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                                                <feOffset dx="0" dy="4" result="offsetblur" />
+                                                <feFlood floodColor="rgba(139, 92, 246, 0.3)" />
+                                                <feComposite in2="offsetblur" operator="in" />
+                                                <feMerge>
+                                                    <feMergeNode />
+                                                    <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                            </filter>
+                                            <linearGradient id="barGradient2021" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#818cf8" stopOpacity={1} />
+                                                <stop offset="100%" stopColor="#6366f1" stopOpacity={1} />
+                                            </linearGradient>
+                                            <linearGradient id="barGradient2022" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#a78bfa" stopOpacity={1} />
+                                                <stop offset="100%" stopColor="#8b5cf6" stopOpacity={1} />
+                                            </linearGradient>
+                                            <linearGradient id="barGradient2023" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#c084fc" stopOpacity={1} />
+                                                <stop offset="100%" stopColor="#a855f7" stopOpacity={1} />
+                                            </linearGradient>
+                                            <linearGradient id="barGradient2025" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#e879f9" stopOpacity={1} />
+                                                <stop offset="100%" stopColor="#d946ef" stopOpacity={1} />
+                                            </linearGradient>
+                                        </defs>
+                                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                        <XAxis
+                                            dataKey="year"
+                                            axisLine={false}
+                                            tickLine={false}
+                                            tick={{ fill: '#64748b', fontSize: 13, fontWeight: 700 }}
+                                            dy={15}
+                                        />
+                                        <YAxis
+                                            axisLine={false}
+                                            tickLine={false}
+                                            tick={{ fill: '#94a3b8', fontSize: 12, fontWeight: 600 }}
+                                            tickFormatter={(value) => `${value}�?}
                                 width={40}
                             />
                             <Tooltip
@@ -980,7 +971,7 @@ export default function App() {
                         <motion.div
                             animate={{ y: [0, -8, 0] }}
                             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: index * 0.2 }}
-                            className={`w-12 h-12 lg:w-14 lg:h-14 rounded-2xl ${item.bg} flex items-center justify-center mb-6 relative z-10 shadow-sm`}
+                            className={"w-12 h-12 lg:w-14 lg:h-14 rounded-2xl " + item.bg + " flex items-center justify-center mb-6 relative z-10 shadow-sm"}
                         >
                               <Icon className={"w-6 h-6 lg:w-7 lg:h-7 " + item.color} />
                         </motion.div>
