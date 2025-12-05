@@ -631,10 +631,10 @@ export default function App() {
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">1,022<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>ë§?/span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
                     <motion.div
-                        initial={{ width: 0 }}
+                        initial={{ width: "0%" }}
                         whileInView={{ width: "80%" }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="h-full bg-violet-500 rounded-full"
                     ></motion.div>
                 </div>
@@ -649,10 +649,10 @@ export default function App() {
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">21.5<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>%</span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
                     <motion.div
-                        initial={{ width: 0 }}
+                        initial={{ width: "0%" }}
                         whileInView={{ width: "60%" }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="h-full bg-fuchsia-500 rounded-full"
                     ></motion.div>
                 </div>
@@ -667,10 +667,10 @@ export default function App() {
                 <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-5 tracking-[-0.02em] leading-none">9.2<span className="text-2xl lg:text-3xl text-slate-400 font-bold ml-2" style={{ fontFeatureSettings: '"tnum"' }}>ì¡?/span></div>
                 <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden my-5">
                     <motion.div
-                        initial={{ width: 0 }}
+                        initial={{ width: "0%" }}
                         whileInView={{ width: "90%" }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className="h-full bg-amber-500 rounded-full"
                     ></motion.div>
                 </div>
