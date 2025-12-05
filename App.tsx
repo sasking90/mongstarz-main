@@ -634,7 +634,7 @@ export default function App() {
                         initial={{ width: "0%" }}
                         whileInView={{ width: "80%" }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false }}
                         className="h-full bg-violet-500 rounded-full"
                     ></motion.div>
                 </div>
@@ -651,8 +651,8 @@ export default function App() {
                     <motion.div
                         initial={{ width: "0%" }}
                         whileInView={{ width: "60%" }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: false }}
                         className="h-full bg-fuchsia-500 rounded-full"
                     ></motion.div>
                 </div>
@@ -669,8 +669,8 @@ export default function App() {
                     <motion.div
                         initial={{ width: "0%" }}
                         whileInView={{ width: "90%" }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
+                        viewport={{ once: false }}
                         className="h-full bg-amber-500 rounded-full"
                     ></motion.div>
                 </div>
