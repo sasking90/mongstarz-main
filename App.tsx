@@ -407,6 +407,8 @@ export default function App() {
                                 <span className="drop-shadow-md">
                                     The Next Gen
                                 </span>
+                                <br />
+                                Ad-Tech Platform.
                             </h1>
 
                             <div className="flex flex-col sm:flex-row gap-4 mt-8 lg:mt-10">
