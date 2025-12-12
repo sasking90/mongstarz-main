@@ -221,18 +221,18 @@ const AdContentItem: React.FC<{
                 {/* Darker Gradient Overlay for better text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
 
-                {/* Icon and Tags - Inside Image at Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-between z-20">
+                {/* Icon and Tags - Inside Image at Bottom with natural blend */}
+                <div className="absolute -bottom-3 left-0 right-0 p-5 lg:p-7 flex items-center justify-between z-20">
                     <motion.div
                         {...iconAnimation}
-                        className="p-2.5 lg:p-3 rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-110 border border-white/30 bg-white/90 backdrop-blur-md"
+                        className="p-2.5 lg:p-3 rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-110 border border-white/20 bg-white/70 backdrop-blur-md"
                         style={{ color: color }}
                     >
                         <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
                     </motion.div>
                     <div className="flex gap-1.5 flex-wrap justify-end">
                         {tags.slice(0, 2).map((tag, i) => (
-                            <span key={i} className="text-[9px] lg:text-[10px] font-bold px-2 lg:px-2.5 py-1 bg-white/90 text-slate-800 rounded-full uppercase tracking-wide border border-white/40 backdrop-blur-md shadow-lg">{tag}</span>
+                            <span key={i} className="text-[9px] lg:text-[10px] font-bold px-2 lg:px-2.5 py-1 bg-white/70 text-slate-800 rounded-full uppercase tracking-wide border border-white/30 backdrop-blur-md shadow-lg">{tag}</span>
                         ))}
                     </div>
                 </div>
