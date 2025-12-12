@@ -578,9 +578,9 @@ export default function App() {
                             </motion.div>
                         </motion.div>
                     </div>
-            </div></section>
+                </div></section>
 
-                                    {/* Market Stats with Enhanced Visuals */}
+            {/* Market Stats with Enhanced Visuals */}
             <section className="py-24 lg:py-40 bg-white relative" id="market">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
@@ -754,12 +754,15 @@ export default function App() {
                                                 position="top"
                                                 content={(props) => {
                                                     const { x, y, width, value } = props;
+                                                    const xNum = Number(x);
+                                                    const yNum = Number(y);
+                                                    const widthNum = Number(width);
                                                     return (
                                                         <g>
-                                                            <rect x={x + width / 2 - 24} y={y - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
+                                                            <rect x={xNum + widthNum / 2 - 24} y={yNum - 50} width="48" height="20" rx="10" fill="#ecfdf5" stroke="#a7f3d0" />
                                                             <text
-                                                                x={x + width / 2}
-                                                                y={y - 40}
+                                                                x={xNum + widthNum / 2}
+                                                                y={yNum - 40}
                                                                 fill="#059669"
                                                                 fontSize="11px"
                                                                 fontWeight="800"
