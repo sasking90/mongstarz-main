@@ -218,26 +218,28 @@ const AdContentItem: React.FC<{
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-in-out pointer-events-none"
                     loading="lazy"
                 />
-                {/* Smooth Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
-            </motion.div>
+                {/* Darker Gradient Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10"></div>
 
-            {/* Content Section - Placed at Bottom */}
-            <div className="p-6 lg:p-8 flex flex-col bg-white order-2 flex-1 relative z-20">
-                <div className="flex items-center justify-between mb-4 lg:mb-6">
+                {/* Icon and Tags - Inside Image at Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex items-center justify-between z-20">
                     <motion.div
                         {...iconAnimation}
-                        className={`p-2.5 lg:p-3 rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-110 border border-slate-100 bg-slate-50`}
+                        className="p-2.5 lg:p-3 rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-110 border border-white/30 bg-white/90 backdrop-blur-md"
                         style={{ color: color }}
                     >
                         <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
                     </motion.div>
                     <div className="flex gap-1.5 flex-wrap justify-end">
                         {tags.slice(0, 2).map((tag, i) => (
-                            <span key={i} className="text-[9px] lg:text-[10px] font-bold px-2 lg:px-2.5 py-1 bg-slate-50 text-slate-700 rounded-full uppercase tracking-wide border border-slate-200 group-hover:border-slate-300 transition-colors">{tag}</span>
+                            <span key={i} className="text-[9px] lg:text-[10px] font-bold px-2 lg:px-2.5 py-1 bg-white/90 text-slate-800 rounded-full uppercase tracking-wide border border-white/40 backdrop-blur-md shadow-lg">{tag}</span>
                         ))}
                     </div>
                 </div>
+            </motion.div>
+
+            {/* Content Section - Placed at Bottom */}
+            <div className="p-6 lg:p-8 flex flex-col bg-white order-2 flex-1 relative z-20">
 
                 <div className="mb-auto">
                     <span className="text-[10px] lg:text-xs font-bold tracking-widest uppercase text-slate-500 mb-1.5 lg:mb-2 block">{subTitle}</span>
