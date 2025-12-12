@@ -383,7 +383,7 @@ export default function App() {
                     <div className="absolute top-[40%] left-[30%] w-[500px] lg:w-[700px] h-[500px] lg:h-[700px] bg-violet-900/30 rounded-full filter blur-[80px] lg:blur-[100px] animate-blob animation-delay-4000 will-change-transform"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-28 pb-20 lg:pt-32 lg:pb-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-28 pb-32 lg:pt-32 lg:pb-20">
                     <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
