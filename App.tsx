@@ -416,7 +416,7 @@ export default function App() {
                                     href="https://play.google.com"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex-1 sm:w-48 px-5 py-4 rounded-[1.125rem] font-extrabold text-sm lg:text-lg transition-all duration-200 flex items-center justify-center gap-2 lg:gap-3 group hover:-translate-y-2 hover:scale-105 active:scale-[0.98] active:translate-y-0 active:duration-75 shadow-[0_4px_16px_rgba(45,212,191,0.25),0_8px_32px_rgba(45,212,191,0.15),inset_0_1px_0_rgba(255,255,255,0.4)] hover:shadow-[0_8px_24px_rgba(45,212,191,0.4),0_16px_48px_rgba(45,212,191,0.25),inset_0_1px_0_rgba(255,255,255,0.6)] bg-gradient-to-br from-teal-300 via-emerald-300 to-emerald-400 text-slate-900 border border-teal-200/60 hover:border-teal-100 relative overflow-hidden"
+                                    className="flex-1 sm:w-48 px-5 py-4 rounded-[1.125rem] font-extrabold text-sm lg:text-lg transition-[transform,box-shadow,border-color] duration-200 flex items-center justify-center gap-2 lg:gap-3 group hover:-translate-y-1 active:translate-y-0 active:duration-0 shadow-[0_4px_16px_rgba(45,212,191,0.25),0_8px_32px_rgba(45,212,191,0.15),inset_0_1px_0_rgba(255,255,255,0.4)] hover:shadow-[0_8px_24px_rgba(45,212,191,0.4),0_16px_48px_rgba(45,212,191,0.25),inset_0_1px_0_rgba(255,255,255,0.6)] active:shadow-[0_2px_8px_rgba(45,212,191,0.2),0_4px_16px_rgba(45,212,191,0.1)] bg-gradient-to-br from-teal-300 via-emerald-300 to-emerald-400 text-slate-900 border border-teal-200/60 hover:border-teal-100 active:border-teal-200 relative overflow-hidden"
                                 >
                                     <div className="bg-slate-900/10 p-1.5 rounded-full transition-all group-hover:bg-slate-900/15 group-hover:scale-110">
                                         <Play size={18} className="fill-current text-slate-900 lg:w-5 lg:h-5" />
@@ -427,7 +427,7 @@ export default function App() {
                                     href="https://apps.apple.com/kr"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="flex-1 sm:w-48 px-5 py-4 rounded-[1.125rem] font-extrabold text-sm lg:text-lg transition-all duration-200 flex items-center justify-center gap-2 lg:gap-3 group hover:-translate-y-2 hover:scale-105 active:scale-[0.98] active:translate-y-0 active:duration-75 shadow-[0_4px_16px_rgba(99,102,241,0.25),0_8px_32px_rgba(99,102,241,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_24px_rgba(99,102,241,0.4),0_16px_48px_rgba(99,102,241,0.25),inset_0_1px_0_rgba(255,255,255,0.25)] bg-gradient-to-br from-indigo-500 via-violet-500 to-violet-600 text-white border border-indigo-400/60 hover:border-indigo-300/70 relative overflow-hidden"
+                                    className="flex-1 sm:w-48 px-5 py-4 rounded-[1.125rem] font-extrabold text-sm lg:text-lg transition-[transform,box-shadow,border-color] duration-200 flex items-center justify-center gap-2 lg:gap-3 group hover:-translate-y-1 active:translate-y-0 active:duration-0 shadow-[0_4px_16px_rgba(99,102,241,0.25),0_8px_32px_rgba(99,102,241,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_24px_rgba(99,102,241,0.4),0_16px_48px_rgba(99,102,241,0.25),inset_0_1px_0_rgba(255,255,255,0.25)] active:shadow-[0_2px_8px_rgba(99,102,241,0.2),0_4px_16px_rgba(99,102,241,0.1)] bg-gradient-to-br from-indigo-500 via-violet-500 to-violet-600 text-white border border-indigo-400/60 hover:border-indigo-300/70 active:border-indigo-400 relative overflow-hidden"
                                 >
                                     <div className="bg-white/20 p-1.5 rounded-full transition-all group-hover:bg-white/30 group-hover:scale-110">
                                         <Apple size={18} className="fill-current text-white mb-0.5 lg:w-5 lg:h-5" />
@@ -438,15 +438,15 @@ export default function App() {
 
                             <div className="mt-14 lg:mt-20 grid grid-cols-3 gap-4 lg:gap-8 border-t border-white/10 pt-8 lg:pt-10 text-white">
                                 <div className="group cursor-default text-center">
-                                    <div className="text-3xl lg:text-5xl font-black mb-2 lg:mb-3 text-white group-hover:text-teal-300 transition-colors drop-shadow-md">99<span className="text-xl lg:text-2xl text-teal-400 align-top">%</span></div>
+                                    <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-teal-300 transition-colors drop-shadow-md">99<span className="text-2xl lg:text-3xl text-teal-400 align-top">%</span></div>
                                     <div className="text-[11px] lg:text-base text-slate-300 font-bold uppercase tracking-wide">AD ENGAGEMENT<br />(광고 몰입도)</div>
                                 </div>
                                 <div className="group cursor-default text-center">
-                                    <div className="text-3xl lg:text-5xl font-black mb-2 lg:mb-3 text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">3.5<span className="text-xl lg:text-2xl text-cyan-400 align-top">X</span></div>
+                                    <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">3.5<span className="text-2xl lg:text-3xl text-cyan-400 align-top">X</span></div>
                                     <div className="text-[11px] lg:text-base text-slate-300 font-bold uppercase tracking-wide">HIGHER ROAS<br />(광고 효율)</div>
                                 </div>
                                 <div className="group cursor-default text-center">
-                                    <div className="text-3xl lg:text-5xl font-black mb-2 lg:mb-3 text-white group-hover:text-violet-300 transition-colors drop-shadow-md">Pat.<span className="text-xl lg:text-2xl text-violet-400 align-top">+</span></div>
+                                    <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-violet-300 transition-colors drop-shadow-md">Pat.<span className="text-2xl lg:text-3xl text-violet-400 align-top">+</span></div>
                                     <div className="text-[11px] lg:text-base text-slate-300 font-bold uppercase tracking-wide">BM PATENT<br />(특허 등록)</div>
                                 </div>
                             </div>
