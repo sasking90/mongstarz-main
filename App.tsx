@@ -436,7 +436,7 @@ export default function App() {
                                 </a>
                             </div>
 
-                            <div className="mt-14 lg:mt-20 grid grid-cols-3 gap-4 lg:gap-8 border-t border-white/10 pt-8 lg:pt-10 text-white">
+                            <div className="mt-6 lg:mt-12 grid grid-cols-3 gap-4 lg:gap-8 text-white">
                                 <div className="group cursor-default text-center">
                                     <div className="text-4xl lg:text-6xl font-black mb-2 lg:mb-3 text-white group-hover:text-teal-300 transition-colors drop-shadow-md">99<span className="text-2xl lg:text-3xl text-teal-400 align-top">%</span></div>
                                     <div className="text-[11px] lg:text-base text-slate-300 font-bold uppercase tracking-wide">AD ENGAGEMENT<br />(광고 몰입도)</div>
@@ -450,6 +450,9 @@ export default function App() {
                                     <div className="text-[11px] lg:text-base text-slate-300 font-bold uppercase tracking-wide">BM PATENT<br />(특허 등록)</div>
                                 </div>
                             </div>
+
+                            {/* Divider line between stats and phone */}
+                            <div className="hidden lg:block w-full border-t border-white/10 mt-12 lg:mt-16"></div>
                         </motion.div>
 
                         <motion.div
