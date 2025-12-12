@@ -251,9 +251,9 @@ const AdContentItem: React.FC<{
                     <div className="text-[9px] lg:text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 lg:mb-3 flex items-center gap-1">
                         <Target size={12} className="text-violet-400" /> Expected Effect
                     </div>
-                    <div className="text-xs lg:text-sm font-bold text-slate-800 break-keep flex items-start gap-2 lg:gap-3 bg-slate-50 p-3 lg:p-4 rounded-2xl border border-slate-100 group-hover:bg-white group-hover:shadow-md transition-all">
-                        <div className="mt-0.5 flex-shrink-0 p-1 rounded-full text-white shadow-sm" style={{ backgroundColor: accentColor }}>
-                            <CheckCircle2 size={12} strokeWidth={3} className="lg:w-[14px] lg:h-[14px]" />
+                    <div className="text-sm lg:text-base font-bold text-slate-800 break-keep flex items-center gap-2 lg:gap-3 bg-slate-50 p-3 lg:p-4 rounded-2xl border border-slate-100 group-hover:bg-white group-hover:shadow-md transition-all">
+                        <div className="flex-shrink-0 p-1 rounded-full text-white shadow-sm" style={{ backgroundColor: accentColor }}>
+                            <CheckCircle2 size={14} strokeWidth={3} className="lg:w-4 lg:h-4" />
                         </div>
                         {effect}
                     </div>
