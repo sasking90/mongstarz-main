@@ -511,7 +511,7 @@ export default function App() {
                                                     <div className="text-3xl lg:text-4xl font-black mb-1 leading-[0.9] tracking-tight drop-shadow-lg">Starbucks<br />Americano</div>
                                                     <div className="flex items-center justify-between mt-4 lg:mt-5">
                                                         <div className="text-[10px] font-bold text-white/90 bg-white/20 px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/20">13:00 Open</div>
-                                                        <button className="bg-white text-red-500 text-[10px] lg:text-xs font-black px-5 py-2.5 lg:px-6 lg:py-3 rounded-full hover:bg-red-50 transition-colors shadow-lg transform active:scale-95 border border-white">李몄뿬?섍린</button>
+                                                        <button className="bg-white text-red-500 text-[10px] lg:text-xs font-black px-5 py-2.5 lg:px-6 lg:py-3 rounded-full hover:bg-red-50 transition-colors shadow-lg transform active:scale-95 border border-white">참여하기</button>
                                                     </div>
                                                 </div>
                                             </div>
