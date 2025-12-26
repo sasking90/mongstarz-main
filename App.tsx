@@ -1,6 +1,7 @@
 ﻿import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { FloatingActionButtons } from './components/FloatingActionButtons';
 import { motion } from 'framer-motion';
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -1009,6 +1010,7 @@ export default function App() {
 
             {/* Footer */}
             <Footer />
+            <FloatingActionButtons />
         </div>
     );
 }
