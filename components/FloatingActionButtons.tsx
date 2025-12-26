@@ -4,7 +4,7 @@ import { MessageCircle, FileText } from 'lucide-react';
 
 export const FloatingActionButtons = () => {
     return (
-        <div className="fixed right-6 bottom-24 z-50 flex flex-col gap-4 items-center">
+        <div className="fixed right-6 bottom-12 z-50 flex flex-col gap-4 items-center">
             {/* 1:1 Inquiry Button - Bouncing Animation */}
             <motion.a
                 href="http://pf.kakao.com/_qxnFyn/chat"
@@ -19,8 +19,8 @@ export const FloatingActionButtons = () => {
                 }}
                 whileHover={{ scale: 1.1 }}
             >
-                <div className="w-14 h-14 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-violet-100 flex items-center justify-center text-violet-600 hover:text-white hover:bg-violet-600 transition-colors duration-300 relative z-10">
-                    <MessageCircle size={24} strokeWidth={2.5} />
+                <div className="w-11 h-11 rounded-full bg-white/70 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-violet-100 flex items-center justify-center text-violet-600 hover:text-white hover:bg-violet-600 hover:opacity-100 transition-all duration-300 relative z-10">
+                    <MessageCircle size={20} strokeWidth={2.5} />
                 </div>
 
                 {/* Tooltip/Label */}
@@ -36,8 +36,8 @@ export const FloatingActionButtons = () => {
                 className="relative group cursor-pointer"
                 whileHover={{ scale: 1.1 }}
             >
-                <div className="w-14 h-14 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-fuchsia-100 flex items-center justify-center text-fuchsia-600 hover:text-white hover:bg-fuchsia-600 transition-colors duration-300 relative z-10">
-                    <FileText size={24} strokeWidth={2.5} />
+                <div className="w-11 h-11 rounded-full bg-white/70 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-fuchsia-100 flex items-center justify-center text-fuchsia-600 hover:text-white hover:bg-fuchsia-600 hover:opacity-100 transition-all duration-300 relative z-10">
+                    <FileText size={20} strokeWidth={2.5} />
                 </div>
 
                 {/* Tooltip/Label */}
