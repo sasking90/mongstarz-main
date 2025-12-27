@@ -968,45 +968,7 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Footer / Contact */}
-            <section className="py-20 bg-slate-50 border-t border-slate-200" id="investment">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="bg-white rounded-[3rem] p-10 lg:p-16 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden"
-                    >
-                        {/* Background Decor */}
-                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-orange-400"></div>
 
-                        <div className="relative z-10">
-                            <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8">
-                                Contact Us
-                            </h2>
-                            <div className="flex flex-col md:flex-row gap-6 justify-center">
-                                <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-violet-200 transition-colors">
-                                    <div className="text-xs font-bold text-violet-500 uppercase tracking-widest mb-2">Phone</div>
-                                    <div className="text-xl font-bold text-slate-800">담당자</div>
-                                    <div className="text-slate-500 font-medium mt-1">010-8825-1279</div>
-                                </div>
-                                <div className="flex-1 bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-fuchsia-200 transition-colors">
-                                    <div className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-2">Email</div>
-                                    <div className="text-xl font-bold text-slate-800">sasking@naver.com</div>
-                                    <div className="text-slate-500 font-medium mt-1">Response within 24h</div>
-                                </div>
-                            </div>
-
-                            <div className="mt-12 pt-8 border-t border-slate-100 flex justify-center">
-                                <div className="flex items-center gap-2 opacity-50">
-                                    <span className="font-black text-slate-400">MONGSTARZ</span>
-                                    <span className="text-slate-300">© 2024 All Rights Reserved.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
 
             {/* Footer */}
             <Footer />
