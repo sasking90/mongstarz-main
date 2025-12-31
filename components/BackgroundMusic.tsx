@@ -1,27 +1,41 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Music, PauseCircle, PlayCircle, Volume2, VolumeX } from 'lucide-react';
+import { Music, Pause, Play, Volume2, VolumeX } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const BackgroundMusic: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        // Attempt to play automatically on mount, but handle browser autoplay policies
         const playAudio = async () => {
             if (audioRef.current) {
                 try {
-                    audioRef.current.volume = 0.3; // Set default volume to 30%
+                    audioRef.current.volume = 0.5;
                     await audioRef.current.play();
                     setIsPlaying(true);
                 } catch (error) {
-                    console.log("Autoplay blocked, user interaction required:", error);
+                    console.log("Autoplay blocked, waiting for user interaction");
                     setIsPlaying(false);
                 }
             }
         };
 
+        // Try to play immediately
         playAudio();
+
+        // Also try to play on first click anywhere if blocked
+        const handleFirstClick = () => {
+            if (audioRef.current && audioRef.current.paused) {
+                playAudio();
+            }
+            document.removeEventListener('click', handleFirstClick);
+        };
+
+        document.addEventListener('click', handleFirstClick);
+
+        return () => {
+            document.removeEventListener('click', handleFirstClick);
+        };
     }, []);
 
     const togglePlay = () => {
@@ -35,36 +49,50 @@ const BackgroundMusic: React.FC = () => {
         }
     };
 
-    const toggleMute = () => {
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
-            setIsMuted(!isMuted);
-        }
-    };
-
     return (
-        <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-black/30 backdrop-blur-md p-2 rounded-full border border-white/10 transition-all hover:bg-black/50">
+        <div className="fixed right-6 bottom-[140px] z-50 flex flex-col items-center gap-2">
             <audio
                 ref={audioRef}
                 src="/assets/now start.mp3"
                 loop
             />
 
-            <button
+            <motion.button
                 onClick={togglePlay}
-                className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
-                aria-label={isPlaying ? "Pause music" : "Play music"}
+                className="relative group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
             >
-                {isPlaying ? <PauseCircle size={24} /> : <PlayCircle size={24} />}
-            </button>
+                {/* Rotating Glow Effect when playing */}
+                {isPlaying && (
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                        className="absolute inset-0 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 blur-md opacity-70"
+                    />
+                )}
 
-            <button
-                onClick={toggleMute}
-                className="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
-                aria-label={isMuted ? "Unmute" : "Mute"}
-            >
-                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-            </button>
+                <div className={`w-11 h-11 rounded-full backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.15)] border flex items-center justify-center transition-all duration-300 relative z-10 ${isPlaying
+                        ? 'bg-gradient-to-br from-violet-500 to-fuchsia-600 border-transparent text-white'
+                        : 'bg-white/70 border-slate-200 text-slate-400 hover:text-violet-500 hover:border-violet-200'
+                    }`}>
+                    {isPlaying ? (
+                        <div className="flex gap-0.5 items-end h-4">
+                            <motion.div animate={{ height: [4, 12, 6, 16, 8] }} transition={{ repeat: Infinity, duration: 0.5 }} className="w-1 bg-white rounded-full" />
+                            <motion.div animate={{ height: [8, 4, 16, 6, 12] }} transition={{ repeat: Infinity, duration: 0.5, delay: 0.1 }} className="w-1 bg-white rounded-full" />
+                            <motion.div animate={{ height: [6, 16, 8, 4, 12] }} transition={{ repeat: Infinity, duration: 0.5, delay: 0.2 }} className="w-1 bg-white rounded-full" />
+                        </div>
+                    ) : (
+                        <Play size={20} className="ml-1" fill="currentColor" />
+                    )}
+                </div>
+
+                {/* Tooltip */}
+                <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-3 py-1.5 bg-slate-800 text-white text-xs font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
+                    {isPlaying ? '음악 끄기' : '음악 켜기'}
+                    <div className="absolute top-1/2 right-[-4px] -translate-y-1/2 border-t-[4px] border-t-transparent border-l-[4px] border-l-slate-800 border-b-[4px] border-b-transparent"></div>
+                </div>
+            </motion.button>
         </div>
     );
 };
