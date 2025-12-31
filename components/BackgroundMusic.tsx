@@ -50,7 +50,7 @@ const BackgroundMusic: React.FC = () => {
     };
 
     return (
-        <div className="fixed right-6 bottom-[140px] z-50 flex flex-col items-center gap-2">
+        <div className="fixed right-6 bottom-[168px] z-50 flex flex-col items-center gap-2">
             <audio
                 ref={audioRef}
                 src="/assets/now start.mp3"
@@ -73,8 +73,8 @@ const BackgroundMusic: React.FC = () => {
                 )}
 
                 <div className={`w-11 h-11 rounded-full backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.15)] border flex items-center justify-center transition-all duration-300 relative z-10 ${isPlaying
-                        ? 'bg-gradient-to-br from-violet-500 to-fuchsia-600 border-transparent text-white'
-                        : 'bg-white/70 border-slate-200 text-slate-400 hover:text-violet-500 hover:border-violet-200'
+                    ? 'bg-gradient-to-br from-violet-500 to-fuchsia-600 border-transparent text-white'
+                    : 'bg-white/70 border-slate-200 text-slate-400 hover:text-violet-500 hover:border-violet-200'
                     }`}>
                     {isPlaying ? (
                         <div className="flex gap-0.5 items-end h-4">
