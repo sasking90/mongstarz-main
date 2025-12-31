@@ -2,6 +2,7 @@
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { FloatingActionButtons } from './components/FloatingActionButtons';
+import BackgroundMusic from './components/BackgroundMusic';
 import { motion } from 'framer-motion';
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -970,6 +971,7 @@ export default function App() {
 
 
 
+            <BackgroundMusic />
             {/* Footer */}
             <Footer />
             <FloatingActionButtons />
