@@ -23,18 +23,25 @@ const BackgroundMusic: React.FC = () => {
         // Try to play immediately
         playAudio();
 
-        // Also try to play on first click anywhere if blocked
-        const handleFirstClick = () => {
+        // Aggressive autoplay fallback: try to play on ANY user interaction
+        const handleInteraction = () => {
             if (audioRef.current && audioRef.current.paused) {
                 playAudio();
             }
-            document.removeEventListener('click', handleFirstClick);
+            // Remove listeners once played or attempted
+            ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
+                document.removeEventListener(event, handleInteraction)
+            );
         };
 
-        document.addEventListener('click', handleFirstClick);
+        ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
+            document.addEventListener(event, handleInteraction)
+        );
 
         return () => {
-            document.removeEventListener('click', handleFirstClick);
+            ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
+                document.removeEventListener(event, handleInteraction)
+            );
         };
     }, []);
 
