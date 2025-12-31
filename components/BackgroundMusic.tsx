@@ -24,22 +24,30 @@ const BackgroundMusic: React.FC = () => {
         playAudio();
 
         // Aggressive autoplay fallback: try to play on ANY user interaction
-        const handleInteraction = () => {
-            if (audioRef.current && audioRef.current.paused) {
-                playAudio();
+        const handleInteraction = async () => {
+            if (audioRef.current) {
+                try {
+                    await audioRef.current.play();
+                    setIsPlaying(true);
+                    // Only remove listeners if playback actually succeeded
+                    ['click', 'touchstart', 'touchend', 'keydown', 'scroll', 'mousedown', 'mousemove', 'pointerdown', 'pointermove'].forEach(event =>
+                        document.removeEventListener(event, handleInteraction)
+                    );
+                } catch (error) {
+                    // If it failed, keep listeners to try again on next interaction
+                    console.log("Interaction autoplay failed, retrying on next event");
+                }
             }
-            // Remove listeners once played or attempted
-            ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
-                document.removeEventListener(event, handleInteraction)
-            );
         };
 
-        ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
+        const events = ['click', 'touchstart', 'touchend', 'keydown', 'scroll', 'mousedown', 'mousemove', 'pointerdown', 'pointermove'];
+
+        events.forEach(event =>
             document.addEventListener(event, handleInteraction)
         );
 
         return () => {
-            ['click', 'touchstart', 'keydown', 'scroll'].forEach(event =>
+            events.forEach(event =>
                 document.removeEventListener(event, handleInteraction)
             );
         };
