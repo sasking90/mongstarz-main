@@ -892,8 +892,17 @@ export default function App() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-500">Ticket Economy</span>
                         </h2>
                         <p className="text-slate-700 text-lg leading-relaxed mb-10 font-medium break-keep max-w-3xl mx-auto">
-                            사용자는 광고 소비를 통해 '응모권(Ticket)'을 얻고, 이를 통해 고가의 경품에 도전합니다.<br className="hidden md:block" />
-                            이 과정에서 발생하는 트래픽과 전환은 광고 수익으로 직결되며, 보상 재원으로 재투자됩니다.
+                            {/* Mobile Version */}
+                            <span className="block md:hidden">
+                                사용자는 광고 시청을 통해 '참가권(a ticket to participate)'을 수집한 후 수집한 참가권으로 경품 뽑기에 도전합니다.<br />
+                                이 과정에서 발생하는 트래픽과 전환은 광고 수익으로 직결되며 또 다른 보상 재원으로 재투자됩니다.
+                            </span>
+                            {/* Desktop Version */}
+                            <span className="hidden md:block">
+                                사용자는 광고 시청을 통해 '참가권(a ticket to participate)'을 수집한 후<br />
+                                수집한 참가권으로 경품 뽑기에 도전합니다.<br />
+                                이 과정에서 발생하는 트래픽과 전환은 광고 수익으로 직결되며 또 다른 보상 재원으로 재투자됩니다.
+                            </span>
                         </p>
                     </div>
 
