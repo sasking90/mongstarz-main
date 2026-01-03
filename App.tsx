@@ -894,12 +894,12 @@ export default function App() {
                         <p className="text-slate-700 text-lg leading-relaxed mb-10 font-medium break-keep max-w-3xl mx-auto">
                             {/* Mobile Version */}
                             <span className="block md:hidden">
-                                사용자는 광고 시청을 통해 '참가권(a ticket to participate)'을 수집한 후 수집한 참가권으로 경품 뽑기에 도전합니다.<br />
+                                사용자는 광고 시청을 통해 '참가권'을 수집한 후 수집한 참가권으로 경품 뽑기에 도전합니다.<br />
                                 이 과정에서 발생하는 트래픽과 전환은 광고 수익으로 직결되며 또 다른 보상 재원으로 재투자됩니다.
                             </span>
                             {/* Desktop Version */}
                             <span className="hidden md:block">
-                                사용자는 광고 시청을 통해 '참가권(a ticket to participate)'을 수집한 후<br />
+                                사용자는 광고 시청을 통해 '참가권'을 수집한 후<br />
                                 수집한 참가권으로 경품 뽑기에 도전합니다.<br />
                                 이 과정에서 발생하는 트래픽과 전환은 광고 수익으로 직결되며 또 다른 보상 재원으로 재투자됩니다.
                             </span>
